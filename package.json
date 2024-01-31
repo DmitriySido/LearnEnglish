@@ -1,5 +1,5 @@
 {
-  "homepage": "https://dmitriysido.github.io/",
+  "homepage": "https://dmitriysido.github.io/learnEnglish/",
   "name": "LearnLanguage",
   "version": "0.1.0",
   "private": true,
@@ -46,7 +46,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1",
     "sass": "^1.69.7"
   }
 }
