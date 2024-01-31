@@ -1,0 +1,31 @@
+.user-statistics{
+  margin-top: 30px;
+  
+  .statistic-list{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .statistic-item{
+      padding: 15px;
+      width: 49%;
+      height: 80px;
+      border-radius: 15px;
+      border: 2px solid #37464f;
+      margin-bottom: 10px;
+
+      .statistic-count{
+        font-size: 16px;
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .statistic-name{
+        font-size: 16px;
+        font-weight: 400;
+        color: #fff;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.change-prfile__button{
+  position: absolute;
+  background: url('../../../../../../public/icons/edit-button100.png') center no-repeat;
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+  background-color: lightblue;
+  font-size: 0px;
+  border-radius: 100px;
+  right: 0px;
+  top: 0px;
+  transition: all .1s ease-in;
+
+  &:hover{
+    transform: scale(1.25);
+  }
+}

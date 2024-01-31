@@ -1,0 +1,30 @@
+.word__wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 90px;
+}
+
+.random-text{
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 26px;
+}
+
+.content-block{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%, -50%);
+  
+  h2{
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    opacity: 0.6;
+  }
+
+  .content-block__disabled{
+    display: none;
+  }
+}

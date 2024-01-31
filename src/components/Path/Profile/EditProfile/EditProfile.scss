@@ -1,0 +1,108 @@
+.edit-pofile__wrapper{
+  width: 85vw;
+  height: 100vh;
+  position: absolute;
+  right: 0px;
+  padding: 10px 10px 10px 30px;
+
+  h1{
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 30px;
+  }
+
+  h2{
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+
+  .select-photo__block{
+    margin-bottom: 15px;
+    display: inline-block;
+
+    .photo-list{
+      display: flex;
+      padding: 15px;
+      border: 2px solid #37464f;
+      border-radius: 15px;
+
+      .photo-item{
+        font-size: 0px;
+        width: 100px;
+        height: 100px;
+        background: #6183c4;
+        border-radius: 100px;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: all .1s ease;
+        overflow: hidden;
+        position: relative;
+
+        img{
+          position: absolute;
+          left: 10px;
+          bottom: 0px;
+          width: 80px;
+          height: 80px;
+        }
+
+        &:hover{
+          transform: scale(1.05);
+          box-shadow: 0 0 10px #6183c4;
+        }
+
+        &:active{
+          box-shadow: 0 0 20px yellow;
+        }
+      }
+    }
+  }
+
+  .edit-name{
+    input{
+      background: #37464f;
+      border-radius: 10px;
+      padding: 10px 10px 10px 5px;
+      color: #fff;
+      width: 30%;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      border: 1px solid transparent;
+      transition: all .1s ease;
+      
+      &:focus{
+        border: 1px solid rgb(255, 255, 255);
+      }
+    }
+
+    &::placeholder{
+      color: #fff;
+    }
+  }
+
+  button{
+    background: rgb(86, 248, 86);
+    border-radius: 100px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+    transition: all .1s ease;
+
+    &:hover{
+      background: rgb(40, 138, 40);
+      color: #fff;
+    }
+
+    &:disabled{
+      background: rgb(59, 167, 59);
+
+      &:hover{
+        color: #000;
+      }
+    }
+  }
+}

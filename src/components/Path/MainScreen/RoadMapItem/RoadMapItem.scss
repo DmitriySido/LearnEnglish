@@ -1,0 +1,111 @@
+.road-map__item{
+  width: 100px;
+  height: 100px;
+  border-radius: 1100px;
+  box-shadow: 0px 10px #073331;
+  background-color: #20b2aa;
+  position: relative;  
+  margin-bottom: 5px;
+  transition: all .1s ease-in-out;
+
+  &:active{
+    transform: translate(0px, 10px);
+    box-shadow: 0px 0px #0e5a56;
+  }
+  
+  &:nth-child(odd){
+    margin-left: auto;
+    margin-right: 30px;
+  }
+
+  &:nth-child(even){
+    margin-right: auto;
+    margin-left: 30px;
+  }
+
+  .road-map__item-button{
+    position: absolute;
+    content: '';
+    width: 30px;
+    height: 30px;
+    background: url('../../../../../public//icons//icons8-star-50.png') center no-repeat;
+    background-size: cover;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    z-index: 1000;
+  }
+
+  // &:hover{
+  //   transform: scale(1.05);
+  // }
+}
+
+.passed{
+  background: yellow;
+  z-index: -1;
+  box-shadow: 0 0 15px #fff;
+
+  .road-map__item-button{
+    background: url('../../../../../public/icons/check-mark-done.png') center no-repeat;
+    background-size: cover;
+  }
+
+  .circle-bar-percent{
+    color: #313843;
+  }
+
+  .circular-progress-fill{
+    stroke: #9acd32;
+  }
+}
+
+.road-map__link{
+  font-size: 0px;
+  padding: 40px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  z-index: 420;
+  position: absolute;
+  left: -24px;
+  top: -24px;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 150px;
+  background-color: lightseagreen;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+
+
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 36%;
+  margin-left: -60px;
+
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: lightseagreen transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}

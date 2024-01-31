@@ -1,0 +1,38 @@
+.circular-progress-container {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  z-index: -1;
+  left: -44px;
+  top: -47px;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+.circular-progress-ring {
+  fill: none;
+  stroke: #186862;
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+
+.circular-progress-fill {
+  fill: none;
+  stroke: lightseagreen; /* Цвет заполнения прогресс-бара */
+  stroke-width: 11;
+  stroke-linecap: round;
+  stroke-dasharray: 1740; /* Длина окружности круга */
+  stroke-dashoffset: 1740; /* Изначальное смещение длины дуги, чтобы было скрыто */
+  transition: stroke-dashoffset 1s ease-in-out;
+}
+
+.circle-bar-percent{
+  position: absolute;
+  left: 45px;
+  top: 25px;
+  font-size: 14px;
+  color: #fff;
+}

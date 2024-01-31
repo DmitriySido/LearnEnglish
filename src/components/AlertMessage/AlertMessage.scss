@@ -1,0 +1,26 @@
+.alert-message__wrapper {
+  position: absolute;
+  padding: 15px;
+  background: #1C1F26;
+  z-index: 1000;
+  right: -100vw;
+  top: 10px;
+  text-align: center;
+  border-radius: 10px;
+  transition: all 1s cubic-bezier(.27,.14,.34,1.44);
+
+  p {
+    font-size: 12px;
+    opacity: 0.8;
+  }
+
+  h1 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+}
+
+.alert-message__wrapper--active {
+  right: 40px;
+}
