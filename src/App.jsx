@@ -159,7 +159,7 @@ export default function App() {
         savedUsername ? '' : <RegistrationPopup/>
       }
 
-      <BrowserRouter>
+      <BrowserRouter basename="/learnEnglish">
         {isHeaderVisible && <Header />}
         <Routes>
           <Route path="/Profile" element={<Profile/>} />
@@ -178,6 +178,3 @@ export default function App() {
     </div>
   )
 }
-
-
-// пофиксить ошибку при нажатии на уровень обернуть в useEffect()
