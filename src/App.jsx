@@ -2,7 +2,7 @@ import MainScreen from './components/Path/MainScreen/MainScreen';
 import TranslateColor from './components/Path/TranslateColor/TranslateColor';
 import TranslateWord from './components/Path/TranslateWord/TranslateWord'
 import './components/main.scss'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import TranslateTheSentences from './components/Path/TranslateTheSentences/TranslateTheSentences';
 import Eat from './components/Path/Eat/Eat';
 import MissingWord from './components/Path/MissingWord/MissingWord';
@@ -159,7 +159,7 @@ export default function App() {
         savedUsername ? '' : <RegistrationPopup/>
       }
 
-      <BrowserRouter basename="/learnEnglish">
+      <HashRouter basename='/'>
         {isHeaderVisible && <Header />}
         <Routes>
           <Route path="/Profile" element={<Profile/>} />
@@ -174,7 +174,7 @@ export default function App() {
           <Route path="/TranslateTheSentences" element={<TranslateTheSentences stateHeader={stateHeaderVisible} sentencesArray={sentencesArray} tab='Translate The Sentences'/>} />
           <Route path="/MissingWord" element={<MissingWord stateHeader={stateHeaderVisible} missingWordPhrases={missingWordPhrases} tab='MissingWord'/>} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   )
 }
