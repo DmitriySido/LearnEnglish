@@ -28,17 +28,13 @@
     content: '';
     width: 30px;
     height: 30px;
-    background: url('../../../../../public//icons//icons8-star-50.png') center no-repeat;
+    background: url('../../../../../public/icons/icons8-star-50.png') center no-repeat;
     background-size: cover;
     top:50%;
     left:50%;
     transform:translate(-50%, -50%);
     z-index: 1000;
   }
-
-  // &:hover{
-  //   transform: scale(1.05);
-  // }
 }
 
 .passed{

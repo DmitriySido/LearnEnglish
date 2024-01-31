@@ -1,6 +1,8 @@
 import EdipProfileButton from './EdipProfileButton/EdipProfileButton'
 import './UserInfoBlock.scss'
 
+import checkMark from '../../../../foto/check-mark-done.png'
+
 export default function UserInfoBlock({ userName, userGender, userPhotoSrc }){
   return(
     <div className="user-info__block">
@@ -9,7 +11,7 @@ export default function UserInfoBlock({ userName, userGender, userPhotoSrc }){
           {userName ? userName : 'User_45302'}
         </h2>
         <button className='user-language__button'>
-          <img src="../../../../../icons/Language-flags/icons8-USA-48.png" alt="" />
+          <img src={checkMark} alt="" />
         </button>
       </div>
 
@@ -25,6 +27,5 @@ export default function UserInfoBlock({ userName, userGender, userPhotoSrc }){
       </div>
       <EdipProfileButton/>
     </div>
-
   )
 }
