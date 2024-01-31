@@ -154,7 +154,10 @@ export default function App() {
   storedObject = JSON.parse(storedObject);
 
   return(
+    <>
+    <h2 className='h2-Error'>На вашем устройстве недоспутно!</h2>
     <div className="App container">
+
       {
         savedUsername ? '' : <RegistrationPopup/>
       }
@@ -177,5 +180,6 @@ export default function App() {
         </Routes>
       </HashRouter>
     </div>
+    </>
   )
 }

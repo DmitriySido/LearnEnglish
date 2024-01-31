@@ -2,15 +2,22 @@
   opacity: 0.5;
 }
 
+.main-screen__wrapper{
+  display: flex;
+  justify-content: space-between;
+  width: 85vw;
+  position: absolute;
+  right: 15px;
+}
+
 .road-map__list{
-  width: 40vw;
+  width: 50%;
   margin-top: 15px;
   
   height: 100vh;
   overflow-y: auto;
-  position: absolute;
-  left: 17vw;
   overflow-x: hidden;
+  margin-left: 25px;
 
 
 
@@ -26,10 +33,9 @@
 
 .more-info{
   margin-top: 15px;
-  width: 37vw;
+  width: 40vw;
   
   height: 100vh;
-  float: right;
   overflow: hidden;
 
   .find-friends{

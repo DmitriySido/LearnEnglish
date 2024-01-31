@@ -281,3 +281,26 @@ body{
   left:50%;
   transform:translate(-50%, 0%);
 }
+
+.h2-Error{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  color: #fff;
+  font-weight: 700;
+  border: 1px solid #888888;
+  padding: 20px;
+  border-radius: 10px;
+  display: none;
+}
+
+@media screen and (max-width: 850px) {
+  .container {
+    display: none;
+  }
+
+  .h2-Error{
+    display: block;
+  }
+}

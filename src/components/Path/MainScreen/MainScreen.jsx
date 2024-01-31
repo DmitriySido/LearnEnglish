@@ -27,7 +27,7 @@ export default function MainScreen(){
   const updateFlag = newFlag => setFlag(newFlag)
 
   return(
-    <>
+    <div className="main-screen__wrapper">
       {flag && <AlertMessageFunc />}
 
       <ul className="road-map__list">
@@ -88,7 +88,7 @@ export default function MainScreen(){
           <h2>Искать друзей</h2>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
