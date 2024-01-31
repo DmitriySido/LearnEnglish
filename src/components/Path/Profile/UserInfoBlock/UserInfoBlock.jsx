@@ -1,7 +1,7 @@
 import EdipProfileButton from './EdipProfileButton/EdipProfileButton'
 import './UserInfoBlock.scss'
 
-import checkMark from '../../../../foto/check-mark-done.png'
+import usaFlag from '../../../../foto/icons/Language-flags/icons8-USA-48.png'
 
 export default function UserInfoBlock({ userName, userGender, userPhotoSrc }){
   return(
@@ -11,7 +11,7 @@ export default function UserInfoBlock({ userName, userGender, userPhotoSrc }){
           {userName ? userName : 'User_45302'}
         </h2>
         <button className='user-language__button'>
-          <img src={checkMark} alt="" />
+          <img src={usaFlag} alt="Flag" />
         </button>
       </div>
 

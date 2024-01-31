@@ -1,6 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import './EditProfile.scss';
 
+import manIcon1 from '../../../../foto/icons/gender/man-icon-1.png'
+import manIcon2 from '../../../../foto/icons/gender/man-icon-2.png'
+import manIcon3 from '../../../../foto/icons/gender/man-icon-3.png'
+import manIcon4 from '../../../../foto/icons/gender/man-icon.png'
+
+import girlIcon1 from '../../../../foto/icons/gender/girl-icon-1.png'
+import girlIcon2 from '../../../../foto/icons/gender/girl-icon-2.png'
+import girlIcon3 from '../../../../foto/icons/gender/girl-icon-3.png'
+import girlIcon4 from '../../../../foto/icons/gender/girl-icon.png'
+
 export default function EditProfile() {
   const storedUserProfileDataString = localStorage.getItem('userProfileData');
   const storedUserProfileData = JSON.parse(storedUserProfileDataString);
@@ -42,17 +52,17 @@ export default function EditProfile() {
           storedUserProfileData.userGender === 'Boy' ?
         
           <ul className="photo-list">
-            <li className="photo-item" onClick={() => handlePhotoClick("../../../../../../icons/gender/man-icon-1.png")}><img src="../../../../../../icons/gender/man-icon-1.png" alt="Man foto" /></li>
-            <li className="photo-item" onClick={() => handlePhotoClick("../../../../../../icons/gender/man-icon-2.png")}><img src="../../../../../../icons/gender/man-icon-2.png" alt="Man foto" /></li>
-            <li className="photo-item" onClick={() => handlePhotoClick("../../../../../../icons/gender/man-icon-3.png")}><img src="../../../../../../icons/gender/man-icon-3.png" alt="Man foto" /></li>
-            <li className="photo-item" onClick={() => handlePhotoClick("../../../../../../icons/gender/man-icon.png")}><img src="../../../../../../icons/gender/man-icon.png" alt="Man foto" /></li>
+            <li className="photo-item" onClick={() => handlePhotoClick(manIcon1)}><img src={manIcon1} alt="Man foto" /></li>
+            <li className="photo-item" onClick={() => handlePhotoClick(manIcon2)}><img src={manIcon2} alt="Man foto" /></li>
+            <li className="photo-item" onClick={() => handlePhotoClick(manIcon3)}><img src={manIcon3} alt="Man foto" /></li>
+            <li className="photo-item" onClick={() => handlePhotoClick(manIcon4)}><img src={manIcon4} alt="Man foto" /></li>
           </ul>
           :
           <ul className="photo-list">
-            <li className="photo-item" onClick={() => handlePhotoClick("../../../../../../icons/gender/girl-icon-1.png")}><img src="../../../../../../icons/gender/girl-icon-1.png" alt="Girl Foto" /></li>
-            <li className="photo-item" onClick={() => handlePhotoClick("../../../../../../icons/gender/girl-icon-2.png")}><img src="../../../../../../icons/gender/girl-icon-2.png" alt="Girl Foto" /></li>
-            <li className="photo-item" onClick={() => handlePhotoClick("../../../../../../icons/gender/girl-icon-3.png")}><img src="../../../../../../icons/gender/girl-icon-3.png" alt="Girl Foto" /></li>
-            <li className="photo-item" onClick={() => handlePhotoClick("../../../../../../icons/gender/girl-icon.png")}><img src="../../../../../../icons/gender/girl-icon.png" alt="Girl Foto" /></li>
+            <li className="photo-item" onClick={() => handlePhotoClick(girlIcon1)}><img src={girlIcon1} alt="Girl Foto" /></li>
+            <li className="photo-item" onClick={() => handlePhotoClick(girlIcon2)}><img src={girlIcon2} alt="Girl Foto" /></li>
+            <li className="photo-item" onClick={() => handlePhotoClick(girlIcon3)}><img src={girlIcon3} alt="Girl Foto" /></li>
+            <li className="photo-item" onClick={() => handlePhotoClick(girlIcon4)}><img src={girlIcon4} alt="Girl Foto" /></li>
           </ul>
         }
       </div>

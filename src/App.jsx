@@ -168,6 +168,7 @@ export default function App() {
           <Route path="/EditProfile" element={<EditProfile/>} />
 
           <Route path="/" element={<MainScreen/>} />
+          <Route path="/" element={<MainScreen/>} />
           <Route path="/Eat" element={<Eat words={eatWords} stateHeader={stateHeaderVisible} sideWords={eatSideWords} tab='Eat'/>} />
           <Route path="/TranslateWord" element={<TranslateColor stateHeader={stateHeaderVisible} words={words} sideWords={sideWords} tab='Word'/>} />
           <Route path="/TranslateColor" element={<TranslateWord stateHeader={stateHeaderVisible} words={colors} sideWords={sideColor} tab='Color'/>} />

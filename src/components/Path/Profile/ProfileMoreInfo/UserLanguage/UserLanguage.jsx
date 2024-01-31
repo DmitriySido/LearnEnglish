@@ -2,6 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Tooltip from '@mui/material/Tooltip';
+import FlagIcon from '../../../../../foto/icons/Language-flags/icons8-USA-48.png'
 
 export default function UserLanguage(){
   
@@ -11,7 +12,7 @@ export default function UserLanguage(){
       <Grid item>
         <Tooltip title="Мои курсы" placement="bottom">
           <button className='user-language__button something-important__item'>
-            <img src="../../../../../../icons/Language-flags/icons8-USA-48.png" alt="Flag icon" />
+            <img src={FlagIcon} alt="Flag icon" />
           </button>
         </Tooltip>
       </Grid>

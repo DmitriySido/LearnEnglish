@@ -3,6 +3,8 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Tooltip from '@mui/material/Tooltip';
 
+import FireIcon from '../../../../../foto/icons/icons8-fire-48.png'
+
 
 export default function DaysOnFire(){
 
@@ -12,7 +14,7 @@ export default function DaysOnFire(){
       <Grid item>
         <Tooltip title="Ударный день" placement="bottom">
           <div className='days-on-fire something-important__item something-important__item-inactive'>
-            <img className='fire' src="../../../../../../icons/icons8-fire-48.png" alt="Fire icon" />
+            <img className='fire' src={FireIcon} alt="Fire icon" />
           </div>
         </Tooltip>
       </Grid>
