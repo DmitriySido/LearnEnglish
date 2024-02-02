@@ -29,7 +29,6 @@ export default function MainScreen(){
   return(
     <div className="main-screen__wrapper">
       {flag && <AlertMessageFunc />}
-
       <ul className="road-map__list">
             <h1 className="road-map__title">Раздел 1</h1>
 
@@ -91,8 +90,3 @@ export default function MainScreen(){
     </div>
   )
 }
-
-// Cделать редактор профиля EdipProfileButton ( при нажатии переходить на вкладку EditProfile -
-// - и там можно будет менять фото user-а, имя и всё это сохранять при нажатии на кнопку *Сохранить изменения*)
-
-// Почистить код, вынести какие то глобальные функции в папку utils

@@ -39,6 +39,8 @@
         transition: all .1s ease;
         overflow: hidden;
         position: relative;
+        box-shadow: 0px 4px #355792;
+        transition: all .1s ease-in-out;
 
         img{
           position: absolute;
@@ -48,13 +50,9 @@
           height: 80px;
         }
 
-        &:hover{
-          transform: scale(1.05);
-          box-shadow: 0 0 10px #6183c4;
-        }
-
         &:active{
-          box-shadow: 0 0 20px yellow;
+          box-shadow: 0px 0px #2f4469;
+          transform:translate(0, 4px);
         }
       }
     }
@@ -83,7 +81,7 @@
     }
   }
 
-  button{
+  .save-changes__button{
     background: rgb(86, 248, 86);
     border-radius: 100px;
     padding: 10px 15px;
@@ -91,6 +89,8 @@
     font-weight: 700;
     color: #000;
     transition: all .1s ease;
+    box-shadow: 0px 4px rgb(18, 75, 18);
+    transition: all .1s ease-in-out;
 
     &:hover{
       background: rgb(40, 138, 40);
@@ -99,10 +99,31 @@
 
     &:disabled{
       background: rgb(59, 167, 59);
-
-      &:hover{
-        color: #000;
-      }
     }
+
+    &:active{
+      box-shadow: 0px 0px rgb(40, 138, 40);
+      transform:translate(0, 4px);
+    }
+  }
+
+  .delete-progress__button{
+    position: absolute;
+     right: 25px;
+     top: 15px;
+     background: rgba(255, 0, 0, 0.459);
+     color: #fff;
+     padding: 10px 15px;
+     border-radius: 100px;
+     font-weight: 700;
+     font-size: 0.7rem;
+     border: 2px solid transparent;
+     box-shadow: 0px 4px #470128;
+     transition: all .1s ease-in-out;
+   
+     &:active{
+       box-shadow: 0px 0px #460428;
+       transform:translate(0, 4px);
+     }
   }
 }

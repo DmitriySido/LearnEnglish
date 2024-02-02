@@ -4,6 +4,7 @@ import ButtonNotPressed from "../../Button/ButtonNotPressed";
 import {ProgressData, StatsData} from "../../Data/ProgressData";
 import { Link } from "react-router-dom";
 import SaveExperience from "../../../utils/SaveExperience";
+import Loader from "../../../utils/Loader/Loader";
 
 export default function TranslateTheSentences({ sentencesArray, stateHeader }){
   //Откладываем изменения состояния хеадера до рендеринга app
@@ -31,6 +32,8 @@ export default function TranslateTheSentences({ sentencesArray, stateHeader }){
   const [selectedWords, setSelectedWords] = useState([])
 
   const body = document.querySelector('body')
+
+  const [loader, setLoader] = useState(false)
 
   // Рандомная Фраза
   function createRandomSentences() {
@@ -116,8 +119,21 @@ export default function TranslateTheSentences({ sentencesArray, stateHeader }){
     stateHeader(true);
   }
 
+  useEffect(() => {
+    setLoader(true);
+
+    const timeout = setTimeout(() => {
+      setLoader(false);
+    }, 4000);
+
+    // Очистка таймаута при размонтировании компонента
+    return () => clearTimeout(timeout);
+  }, []);
+
   return(
     <div>
+      {loader && <Loader/>}
+
       <ButtonToBack toBackPopupAlert={toBackPopupAlert} alertState={alertState}/>
 
       <button className={stateButton === true ? 'disabled-button' : 'active-button'} onClick={createRandomSentences}>Начать</button>

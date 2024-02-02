@@ -7,6 +7,7 @@
   right: 0px;
   overflow-y: scroll;
   padding: 10px 10px 10px 30px;
+  overflow-x: hidden;
 
   .user-language__button{
     background: transparent;
@@ -23,6 +24,26 @@
       font-weight: 600;
       color: #fff;
       margin-bottom: 20px;
+      
+      @media screen and (max-width: 700px){
+        &{
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px){
+    .fire{
+      display: none;
+    }
+
+    .diamond{
+      display: none;
+    }
+
+    .user-language__button{
+      display: none;
     }
   }
 }

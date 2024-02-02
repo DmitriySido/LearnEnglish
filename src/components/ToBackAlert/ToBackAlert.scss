@@ -51,12 +51,15 @@
   height: 40px;
   transition: all .2s ease;
   margin: 0px 2px;
+
+  box-shadow: 0px 4px #c9006e;
+
+  &:active{
+    box-shadow: 0px 0px #c9006e;
+    transform:translate(-0, 4px);
+  }
 }
 
 .alert-button__link{
   padding: 10px 19px;
-}
-
-.alert-button:hover{
-  transform: scale(1.05);
 }

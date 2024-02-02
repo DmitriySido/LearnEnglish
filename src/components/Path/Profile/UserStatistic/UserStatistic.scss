@@ -26,6 +26,12 @@
         font-weight: 400;
         color: #fff;
       }
+
+      @media screen and (max-width: 700px){
+        &{
+          width: 100%;
+        }
+      }
     }
   }
 }

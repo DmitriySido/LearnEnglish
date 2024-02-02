@@ -10,6 +10,8 @@ import girlIcon1 from '../../../../foto/icons/gender/girl-icon-1.png'
 import girlIcon2 from '../../../../foto/icons/gender/girl-icon-2.png'
 import girlIcon3 from '../../../../foto/icons/gender/girl-icon-3.png'
 import girlIcon4 from '../../../../foto/icons/gender/girl-icon.png'
+import ResetProgress from './ResetProgress/ResetProgress';
+import SaveChangesAlert from '../SaveChangesAlert/SaveChangesAlert';
 
 export default function EditProfile() {
   const storedUserProfileDataString = localStorage.getItem('userProfileData');
@@ -18,9 +20,17 @@ export default function EditProfile() {
   const [userPhoto, setUserPhoto] = useState(storedUserProfileData.userPhotoSrc);
   const [stateEditUserName, setStateEditUserName] = useState(storedUserProfileData.userName);
   const [flag, setFlag] = useState(false);
+  const [alertState, setAlertState] = useState(false)
 
   const handlePhotoClick = (src) => {
     setUserPhoto(src)
+    
+    // Сообщение что произошло сохранение
+    setAlertState(true)
+
+    setTimeout(()=>{
+      setAlertState(false)
+    },1000)
   }
 
   useEffect(() => {
@@ -40,10 +50,19 @@ export default function EditProfile() {
     const userProfileDataString = JSON.stringify(storedUserProfileData);
     localStorage.setItem('userProfileData', userProfileDataString);
     setFlag(false);
+
+    // Сообщение что произошло сохранение
+    setAlertState(true)
+
+    setTimeout(()=>{
+      setAlertState(false)
+    },600)
   };
+
 
   return(
     <div className="edit-pofile__wrapper">
+      <SaveChangesAlert alertState={alertState} setAlertState={setAlertState}/>
       <h1>Аккаунт</h1>
 
       <div className="select-photo__block">
@@ -77,12 +96,13 @@ export default function EditProfile() {
             placeholder={storedUserProfileData.userName}
           />
           <br />
-          <button type="button" disabled={!flag} onClick={saveChanges}>
+          <button className='save-changes__button' type="button" disabled={!flag} onClick={saveChanges}>
             Сохранить изменения
           </button>
         </form>
       </div>
 
+        <ResetProgress/>
     </div>
   )
 }

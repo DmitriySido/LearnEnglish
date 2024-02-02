@@ -4,6 +4,7 @@ import ButtonToBack from "../../Button/ButtonToBack/ButtonToBack"
 import { Link } from "react-router-dom";
 import { ProgressData } from "../../Data/ProgressData";
 import SaveExperience from "../../../utils/SaveExperience";
+import Loader from "../../../utils/Loader/Loader";
 
 export default function MissingWord({ missingWordPhrases, stateHeader }){
   //Откладываем изменения состояния хеадера до рендеринга app
@@ -15,6 +16,8 @@ export default function MissingWord({ missingWordPhrases, stateHeader }){
   const [alertState, setAlertState] = useState(false)
   const [stateButton, setStateButton] = useState(false)
   const [count, setCount] = useState(0)
+
+  const [loader, setLoader] = useState(false)
 
   function randomPhrases() {
     setStateButton(true)
@@ -64,8 +67,21 @@ export default function MissingWord({ missingWordPhrases, stateHeader }){
     stateHeader(true);
   }
 
+  useEffect(() => {
+    setLoader(true);
+
+    const timeout = setTimeout(() => {
+      setLoader(false);
+    }, 4000);
+
+    // Очистка таймаута при размонтировании компонента
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <>
+
+      {loader && <Loader/>}
       <ButtonToBack toBackPopupAlert={toBackPopupAlert} alertState={alertState}/>
 
       <button className={stateButton === true ? 'disabled-button' : 'active-button'} onClick={randomPhrases}>Начать</button>

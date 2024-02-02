@@ -4,6 +4,7 @@ import RenderWords from "../../RenderWords/RenderWords";
 import ButtonToBack from "../../Button/ButtonToBack/ButtonToBack";
 import {ProgressData} from "../../Data/ProgressData";
 import SaveExperience from "../../../utils/SaveExperience";
+import Loader from "../../../utils/Loader/Loader";
 
 export default function TranslateWord({ words, sideWords, tab, stateHeader}) {
   //Откладываем изменения состояния хеадера до рендеринга app
@@ -14,6 +15,7 @@ export default function TranslateWord({ words, sideWords, tab, stateHeader}) {
 
   const [stateButton, setStateButton] = useState(false)
   const [alertState, setAlertState] = useState(false)
+  const [loader, setLoader] = useState(false)
 
   const body = document.querySelector('body')
   
@@ -94,10 +96,23 @@ export default function TranslateWord({ words, sideWords, tab, stateHeader}) {
 
       return stateHeader(true);
     }
+    
+    useEffect(() => {
+      setLoader(true);
+  
+      const timeout = setTimeout(() => {
+        setLoader(false);
+      }, 4000);
+  
+      // Очистка таймаута при размонтировании компонента
+      return () => clearTimeout(timeout);
+    }, []);
 
 
   return (
     <div>
+
+      { loader && <Loader/> }
       <ButtonToBack toBackPopupAlert={toBackPopupAlert} alertState={alertState}/>
 
       <button className={stateButton === true ? 'disabled-button' : 'active-button'} onClick={funcRandomWord}>Начать</button>

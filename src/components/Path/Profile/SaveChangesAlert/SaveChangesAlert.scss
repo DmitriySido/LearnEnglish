@@ -1,0 +1,29 @@
+.save-changes__alert {
+  position: absolute;
+  border-radius: 100px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 12312;
+  width: 48px;
+  height: 48px;
+  padding: 25px;
+  background: #ffffff;
+  transform: translateX(200px);
+  transition: all .4s ease-in-out;
+
+  &::before {
+    position: absolute;
+    content: '';
+    background: url('../../../../foto/icons/icons8-check-mark.gif') center no-repeat;
+    background-size: cover;
+    width: 36px;
+    height: 36px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.save-changes__alert--active {
+  transform: translateX(0px);
+}

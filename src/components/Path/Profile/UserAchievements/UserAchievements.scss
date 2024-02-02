@@ -26,6 +26,12 @@
         top: 18px;
         left: 5px;
       }
+      @media screen and (max-width: 700px){
+        & {
+          width: 80px;
+          margin-right: 5px;
+        }
+      }
     }
 
     .achievements-text{
@@ -36,6 +42,12 @@
       font-size: 18px;
       font-weight: 700;
       margin-bottom: 10px;
+
+      @media screen and (max-width: 700px){
+        &{
+          font-size: 16px;
+        }
+      }
     }
 
     .achievements-progress-bar__wrapper {
@@ -60,6 +72,14 @@
       font-weight: 400;
       color: #fff;
       opacity: 0.8;
+
+      &{
+        @media screen and (max-width: 700px){
+          &{
+            font-size: 14px;
+          }
+        }
+      }
     }
 
     .current-experience{
@@ -70,6 +90,12 @@
       font-size: 16px;
       color: #fff;
       opacity: 0.8;
+
+      &{
+        @media screen and (max-width: 700px){
+          font-size: 14px;
+        }
+      }
     }
   }
 }

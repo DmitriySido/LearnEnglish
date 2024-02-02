@@ -19,6 +19,10 @@
   overflow-x: hidden;
   margin-left: 25px;
 
+  @media screen and (max-width: 700px){
+    width: 65%;
+  }
+
 
 
   .road-map__title{
@@ -37,6 +41,7 @@
   
   height: 100vh;
   overflow: hidden;
+  
 
   .find-friends{
     width: 100%;
@@ -50,6 +55,15 @@
     h2{
       font-size: 16px;
       font-weight: 700;
+    }
+  }
+
+  @media screen and (max-width: 700px){
+    width: 25vw;
+    .find-friends{
+      h2{
+        font-size: 12px;
+      }
     }
   }
 }

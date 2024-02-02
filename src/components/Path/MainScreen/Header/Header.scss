@@ -33,4 +33,14 @@
       opacity: 1;
     }
   }
+
+  @media screen and (max-width: 700px) {
+    .navigation-item{
+      padding: 6px;
+      margin-bottom: 0px;
+    }
+    .navigation-item .navigation-link{
+      font-size: 14px;
+    } 
+  }
 }
