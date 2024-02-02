@@ -11,6 +11,10 @@
   transform: translateX(200px);
   transition: all .4s ease-in-out;
 
+  @media screen and (max-width: 500px){
+    bottom: 90%;
+  }
+
   &::before {
     position: absolute;
     content: '';

@@ -149,6 +149,10 @@
       left: 40px;
       width: 86%;
     }
+
+    @media screen and (max-width: 400px){
+      top: 73%;
+    }
   }
 
   @media screen and (max-width: 500px){
