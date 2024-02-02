@@ -23,6 +23,11 @@
     width: 65%;
   }
 
+  @media screen and (max-width: 500px){
+    width: 100%;
+    margin-left: 65px;
+  }
+
 
 
   .road-map__title{
@@ -65,5 +70,9 @@
         font-size: 12px;
       }
     }
+  }
+
+  @media screen and (max-width: 500px){
+    display: none;
   }
 }

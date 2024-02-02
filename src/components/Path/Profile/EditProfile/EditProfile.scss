@@ -4,6 +4,7 @@
   position: absolute;
   right: 0px;
   padding: 10px 10px 10px 30px;
+  overflow-x: hidden;
 
   h1{
     font-size: 32px;
@@ -28,6 +29,13 @@
       border: 2px solid #37464f;
       border-radius: 15px;
 
+      @media screen and (max-width: 500px){
+        &{
+          width: 100%;
+          flex-wrap: wrap;
+        }
+      }
+
       .photo-item{
         font-size: 0px;
         width: 100px;
@@ -41,6 +49,10 @@
         position: relative;
         box-shadow: 0px 4px #355792;
         transition: all .1s ease-in-out;
+
+        @media screen and (max-width: 500px){
+          margin-bottom: 15px;
+        }
 
         img{
           position: absolute;
@@ -73,6 +85,12 @@
       
       &:focus{
         border: 1px solid rgb(255, 255, 255);
+      }
+
+      @media screen and (max-width: 500px){
+        &{
+          width: 61%; 
+        }
       }
     }
 
@@ -122,8 +140,18 @@
      transition: all .1s ease-in-out;
    
      &:active{
-       box-shadow: 0px 0px #460428;
-       transform:translate(0, 4px);
-     }
+      box-shadow: 0px 0px #460428;
+      transform:translate(0, 4px);
+    }
+
+    @media screen and (max-width: 500px){
+      top: 93%;
+      left: 40px;
+      width: 86%;
+    }
+  }
+
+  @media screen and (max-width: 500px){
+    padding: 10px 10px 10px 50px;
   }
 }

@@ -15,8 +15,15 @@
   width: 40px;
 
   top:50%;
-  left:52%;
+  left:51%;
   transform:translate(-50%, -50%);
+
+  @media screen and (max-width: 400px){
+    &{
+      left:51%;
+      transform:translate(-20%, -40%);
+    }
+  }
 }
 
 .box {

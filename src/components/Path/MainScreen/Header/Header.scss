@@ -43,4 +43,12 @@
       font-size: 14px;
     } 
   }
+
+  @media screen and (max-width: 500px){
+    width: 22vw;
+  }
+
+  @media screen and (max-width: 400px){
+    width: 25vw;
+  }
 }

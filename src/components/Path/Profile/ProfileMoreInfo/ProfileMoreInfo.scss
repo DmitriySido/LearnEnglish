@@ -65,4 +65,21 @@
       display: none;
     }
   }
+
+  @media screen and (max-width: 500px){
+    position: absolute;
+    top: 60px;
+    left: 80px;
+    .subscribe-block, .look-for-others-block{
+      display: none;
+    }
+
+    .something-important{
+      display: flex;
+    }
+  }
+
+  @media screen and (max-width: 400px){
+    left: 97px;
+  }
 }
