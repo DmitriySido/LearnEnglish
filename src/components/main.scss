@@ -59,6 +59,19 @@ body{
     border-radius: 10px;
   }
 
+  @media screen and (max-width: 600px){
+    ::-webkit-scrollbar {
+      width: 0px; /* ширина для вертикального скролла */
+      height: auto; /* высота для горизонтального скролла */
+      background-color: #03030e;
+    }
+  
+    ::-webkit-scrollbar-thumb {
+      background: rgb(255, 203, 20);
+      border-radius: 10px;
+    }
+  }
+
 .container{
   width: 100%;
   max-width: 1300px;

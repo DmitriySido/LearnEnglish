@@ -8,24 +8,33 @@
   width: 85vw;
   position: absolute;
   right: 15px;
+
+  @media screen and (max-width: 600px){
+    width: 96vw;
+  }
 }
 
 .road-map__list{
   width: 50%;
-  margin-top: 15px;
+  margin-top: 25px;
   
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
   margin-left: 25px;
 
+  @media screen and (max-width: 1000px){
+    width: 62%;
+    margin-left: 64px;
+  }
+
   @media screen and (max-width: 700px){
     width: 65%;
   }
-
-  @media screen and (max-width: 500px){
+  
+  @media screen and (max-width: 600px){
     width: 100%;
-    margin-left: 65px;
+    margin: 0px;
   }
 
 
@@ -37,6 +46,10 @@
     padding: 0px 0px 10px 0px;
     margin-bottom: 100px;
     border-bottom: 2px solid #37464f;
+
+    @media screen and (max-width: 600px){
+      margin-top: 15px;
+    }
   }
 }
 
@@ -63,6 +76,10 @@
     }
   }
 
+  @media screen and (max-width: 1000px){
+    width: 30vw;
+  }
+
   @media screen and (max-width: 700px){
     width: 25vw;
     .find-friends{
@@ -72,7 +89,7 @@
     }
   }
 
-  @media screen and (max-width: 500px){
+  @media screen and (max-width: 600px){
     display: none;
   }
 }

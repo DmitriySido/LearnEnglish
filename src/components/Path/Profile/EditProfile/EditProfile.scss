@@ -6,6 +6,11 @@
   padding: 10px 10px 10px 30px;
   overflow-x: hidden;
 
+  @media screen and (max-width: 600px){
+    width: 100vw;
+    padding: 10px 10px 10px 10px;
+  }
+
   h1{
     font-size: 32px;
     font-weight: 700;
@@ -87,6 +92,10 @@
         border: 1px solid rgb(255, 255, 255);
       }
 
+      @media screen and (max-width: 600px){
+        width:40%;
+      }
+
       @media screen and (max-width: 500px){
         &{
           width: 61%; 
@@ -145,17 +154,13 @@
     }
 
     @media screen and (max-width: 500px){
-      top: 93%;
-      left: 40px;
-      width: 86%;
+      top: 2%;
     }
 
     @media screen and (max-width: 400px){
-      top: 73%;
+      position: relative;
+      margin-top: 10px;
+      left: 0px;
     }
-  }
-
-  @media screen and (max-width: 500px){
-    padding: 10px 10px 10px 50px;
   }
 }
