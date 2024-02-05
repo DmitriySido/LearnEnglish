@@ -72,8 +72,9 @@
 
   @media screen and (max-width: 500px){
     position: absolute;
-    top: 60px;
-    left: 49px;
+    top: 123px;
+    left: 8px;
+    
     .subscribe-block, .look-for-others-block{
       display: none;
     }
@@ -81,10 +82,5 @@
     .something-important{
       display: flex;
     }
-  }
-
-  @media screen and (max-width: 400px){
-    top: 60px;
-    left: 10px;
   }
 }

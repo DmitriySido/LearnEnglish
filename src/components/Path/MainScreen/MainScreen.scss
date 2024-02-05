@@ -10,7 +10,13 @@
   right: 15px;
 
   @media screen and (max-width: 600px){
-    width: 96vw;
+    width: 100vw;
+    right: 0px;
+  }
+
+  @media screen and (max-width: 550px){
+    width: 100vw;
+    right: 0px;
   }
 }
 
@@ -35,9 +41,8 @@
   @media screen and (max-width: 600px){
     width: 100%;
     margin: 0px;
+    padding: 0px 0px  100px 0px;
   }
-
-
 
   .road-map__title{
     text-align: center;
@@ -48,7 +53,8 @@
     border-bottom: 2px solid #37464f;
 
     @media screen and (max-width: 600px){
-      margin-top: 15px;
+      padding-top: 15px;
+      background: rgb(255 100 191);
     }
   }
 }

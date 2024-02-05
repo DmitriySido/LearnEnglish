@@ -55,7 +55,7 @@ export default function TranslateTheSentences({ sentencesArray, stateHeader }){
     setTimeout(function() {setFlag(false)}, 0)
 
     body.style.background = '#006123'
-    setTimeout(function() {body.style.background = '#03030e'}, 800)
+    setTimeout(function() {body.style.background = 'rgb(19 31 36)'}, 800)
     setCount(count + 1)
     setShuffledArray([])
     setSelectedWords([])
@@ -87,7 +87,7 @@ export default function TranslateTheSentences({ sentencesArray, stateHeader }){
           body.style.background = '#270505'
           count > 0 && setCount(count - 1)
         }, 800)
-        setTimeout(function() {body.style.background = '#03030e'}, 1600)
+        setTimeout(function() {body.style.background = 'rgb(19 31 36)'}, 1600)
       }
       return newSelectedWords
     })

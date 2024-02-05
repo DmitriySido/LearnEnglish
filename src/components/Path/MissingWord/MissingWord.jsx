@@ -43,11 +43,11 @@ export default function MissingWord({ missingWordPhrases, stateHeader }){
     if (content === randomElement.emptyWord) {
       setCount(count + 1)
       body.style.background = "#099121"
-      setTimeout(function () {body.style.background = "#03030e"}, 800)
+      setTimeout(function () {body.style.background = "rgb(19 31 36)"}, 800)
     } else {
       count < 0 && setCount(count - 1)
       body.style.background = "#310404"
-      setTimeout(function () {body.style.background = "#03030e"}, 800)
+      setTimeout(function () {body.style.background = "rgb(19 31 36)"}, 800)
     }
     randomPhrases()
   }

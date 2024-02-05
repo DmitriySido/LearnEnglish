@@ -14,14 +14,14 @@ svg {
 
 .circular-progress-ring {
   fill: none;
-  stroke: #186862;
+  stroke: rgb(134, 3, 167);
   stroke-width: 10;
   stroke-linecap: round;
 }
 
 .circular-progress-fill {
   fill: none;
-  stroke: lightseagreen; /* Цвет заполнения прогресс-бара */
+  stroke: rgb(255, 255, 255); /* Цвет заполнения прогресс-бара */
   stroke-width: 11;
   stroke-linecap: round;
   stroke-dasharray: 1740; /* Длина окружности круга */

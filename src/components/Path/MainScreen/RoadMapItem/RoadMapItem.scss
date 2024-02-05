@@ -2,14 +2,14 @@
   width: 100px;
   height: 100px;
   border-radius: 1100px;
-  box-shadow: 0px 10px #073331;
-  background-color: #20b2aa;
+  box-shadow: 0px 8px rgb(161, 56, 117);
+  background-color: rgb(255 100 191);
   position: relative;  
   margin-bottom: 5px;
   transition: all .1s ease-in-out;
 
   &:active{
-    transform: translate(0px, 10px);
+    transform: translate(0px, 8px);
     box-shadow: 0px 0px #0e5a56;
   }
   
@@ -71,7 +71,7 @@
 .tooltiptext {
   visibility: hidden;
   width: 150px;
-  background-color: lightseagreen;
+  background-color: rgb(255 100 191);
   color: #fff;
   text-align: center;
   padding: 5px;
@@ -97,7 +97,7 @@
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: lightseagreen transparent transparent transparent;
+  border-color: rgb(255 100 191) transparent transparent transparent;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
