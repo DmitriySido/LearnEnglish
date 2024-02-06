@@ -14,8 +14,14 @@ export default function MainScreen(){
   const storedTranslateWordsProgress = localStorage.getItem('trasnlateWords');
   ProgressData.trasnlateWords = storedTranslateWordsProgress ? parseInt(storedTranslateWordsProgress, 10) : 0;
 
+  const storedTranslateVerbsProgress = localStorage.getItem('trasnlateVerbs');
+  ProgressData.trasnlateVerbs = storedTranslateVerbsProgress ? parseInt(storedTranslateVerbsProgress, 10) : 0;
+
   const storedTranslateColorsProgress = localStorage.getItem('trasnlateColors');
   ProgressData.trasnlateColors = storedTranslateColorsProgress ? parseInt(storedTranslateColorsProgress, 10) : 0;
+
+  const storedTranslateWorldProgress = localStorage.getItem('trasnlateWorld');
+  ProgressData.trasnlateWorld = storedTranslateWorldProgress ? parseInt(storedTranslateWorldProgress, 10) : 0;
 
   const missingWordInPhraseProgress = localStorage.getItem('missingWordInPhrase');
   ProgressData.missingWordInPhrase = missingWordInPhraseProgress ? parseInt(missingWordInPhraseProgress, 10) : 0;
@@ -52,10 +58,30 @@ export default function MainScreen(){
               setFlag={updateFlag}
               storedProgress1={storedTranslateColorsProgress}
               storedProgress2={storedTranslateColorsProgress}
+              pathTo={'/TranslateVerbs'}
+              percent={storedTranslateVerbsProgress}
+              tooltipText='Учим глаголы'
+            />
+
+            <RoadMapItem
+              setFlag={updateFlag}
+              storedProgress1={storedTranslateVerbsProgress}
+              storedProgress2={storedTranslateVerbsProgress}
+              pathTo={'/TranslateWorld'}
+              percent={storedTranslateWorldProgress}
+              tooltipText='Окружающий мир'
+            />
+
+            <RoadMapItem
+              setFlag={updateFlag}
+              storedProgress1={storedTranslateWorldProgress}
+              storedProgress2={storedTranslateWorldProgress}
               pathTo={'/TranslateWord'}
               percent={storedTranslateWordsProgress}
               tooltipText='Переводим слова'
             />
+
+            <h1 className="road-map__title">Раздел 2</h1>
 
             <RoadMapItem
               setFlag={updateFlag}

@@ -21,7 +21,7 @@ export default function UserStatistic({ experience }){
       <h2 className='user__block-title'>Статистика</h2>
 
       <ul className='statistic-list'>
-        <li className='statistic-item'>
+        <li className='statistic-item inactive'>
           <p className='statistic-count'>0</p>
           <h3 className='statistic-name'>Уданый режим</h3>
         </li>
@@ -33,7 +33,7 @@ export default function UserStatistic({ experience }){
           <p className='statistic-count'>{experience === 0 ? 'Лиги нет' : ligs}</p>
           <h3 className='statistic-name'>Текущая лига</h3>
         </li>
-        <li className='statistic-item'>
+        <li className='statistic-item inactive'>
           <p className='statistic-count'>0</p>
           <h3 className='statistic-name'>Топ-3</h3>
         </li>

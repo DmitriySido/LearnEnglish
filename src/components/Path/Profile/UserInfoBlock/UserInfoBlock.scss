@@ -5,6 +5,11 @@
   border-bottom: 2px solid #37464f;
   margin-bottom: 15px;
   padding-bottom: 15px;
+  color: #37464f;
+
+  @media screen and (max-width: 600px){
+    font-size: 20px;
+  }
 }
 
 .user-info__block{
@@ -14,6 +19,20 @@
   border-bottom: 2px solid #37464f;
   padding-bottom: 35px;
   position: relative;
+
+  .registration-date{
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+
+    img{
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+  }
 
   .user-foto{
     width: 100px;
@@ -44,5 +63,9 @@
         }
       }
     }
+  }
+
+  @media screen and (max-width: 500px){
+    align-items: flex-start;
   }
 }

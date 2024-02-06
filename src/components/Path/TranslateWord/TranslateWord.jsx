@@ -69,46 +69,64 @@ export default function TranslateWord({ words, sideWords, tab, stateHeader}) {
     stateHeader(true)
   } 
 
-
-    //Save Progress Word
-    function addProgressWords() {
+  //Save progress
+  const addProgress = () => {
+    if(tab === 'Word'){
       // Увеличиваем прогресс на 1
       ProgressData.trasnlateWords += 1
     
       // Сохраняем обновленное значение в локальное хранилище
       localStorage.setItem('trasnlateWords', ProgressData.trasnlateWords);
-
+      
       SaveExperience(50)
-
+      
       return stateHeader(true)
-    }
 
-    //Save Progress Color
-    function addProgressColors() {
+    }else if(tab === 'Color'){
       // Увеличиваем прогресс на 1
       ProgressData.trasnlateColors += 1;
     
       // Сохраняем обновленное значение в локальное хранилище
       localStorage.setItem('trasnlateColors', ProgressData.trasnlateColors);
-  
-
+        
       SaveExperience(35)
-
+      
+      return stateHeader(true);
+    }else if(tab === 'Verbs'){
+      // Увеличиваем прогресс на 1
+      ProgressData.trasnlateVerbs += 1;
+    
+      // Сохраняем обновленное значение в локальное хранилище
+      localStorage.setItem('trasnlateVerbs', ProgressData.trasnlateVerbs);
+        
+      SaveExperience(35)
+      
+      return stateHeader(true);
+    }else if(tab === 'World'){
+      // Увеличиваем прогресс на 1
+      ProgressData.trasnlateWorld += 1;
+    
+      // Сохраняем обновленное значение в локальное хранилище
+      localStorage.setItem('trasnlateWorld', ProgressData.trasnlateWorld);
+        
+      SaveExperience(35)
+      
       return stateHeader(true);
     }
-    
-    useEffect(() => {
-      setLoader(true);
-  
-      const timeout = setTimeout(() => {
-        setLoader(false);
-      }, 4000);
-  
-      // Очистка таймаута при размонтировании компонента
-      return () => clearTimeout(timeout);
-    }, []);
+  }
 
+  useEffect(() => {
+    setLoader(true);
+  
+    const timeout = setTimeout(() => {
+      setLoader(false);
+    }, 4000);
+  
+    // Очистка таймаута при размонтировании компонента
+    return () => clearTimeout(timeout);
+  }, []);
 
+  
   return (
     <div>
 
@@ -123,7 +141,7 @@ export default function TranslateWord({ words, sideWords, tab, stateHeader}) {
 
       {(count === 5) && (tab === 'Word' ? <h2 className="plus-experience">+50 очков опыта!</h2> : <h2 className="plus-experience">+35 очков опыта!</h2>)}
 
-      {count === 5 && <button onClick={tab === 'Word' ? addProgressWords : addProgressColors}><Link to="/" className='button-to-back__center'>Закончить</Link></button>}
+      {count === 5 && <button onClick={addProgress}><Link to="/" className='button-to-back__center'>Закончить</Link></button>}
     </div>
   )
 }

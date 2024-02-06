@@ -26,6 +26,7 @@ const UserProfileData = {
   userGender: '',
   userPassword: '',
   userPhotoSrc: '',
+  userRegistrationDate: '',
 }
 
 export { ProgressData, StatsData, UserProfileData };

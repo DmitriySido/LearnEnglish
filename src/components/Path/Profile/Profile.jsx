@@ -20,7 +20,7 @@ export default function Profile(){
   return(
     <div className="profile">
       <div className="profile__middle-content"> 
-        <UserInfoBlock userName={storedUserProfileData.userName} userGender={storedUserProfileData.userGender} userPhotoSrc={storedUserProfileData.userPhotoSrc}/>
+        <UserInfoBlock userName={storedUserProfileData.userName} userGender={storedUserProfileData.userGender} userPhotoSrc={storedUserProfileData.userPhotoSrc} userRegistrationDate={storedUserProfileData.userRegistrationDate}/>
 
         <UserStatistic experience={storedUserProfileData && storedUserProfileData.experience}/>
 

@@ -2,7 +2,7 @@ import MainScreen from './components/Path/MainScreen/MainScreen';
 import TranslateColor from './components/Path/TranslateColor/TranslateColor';
 import TranslateWord from './components/Path/TranslateWord/TranslateWord'
 import './components/main.scss'
-import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import TranslateTheSentences from './components/Path/TranslateTheSentences/TranslateTheSentences';
 import Eat from './components/Path/Eat/Eat';
 import MissingWord from './components/Path/MissingWord/MissingWord';
@@ -12,6 +12,8 @@ import Header from './components/Path/MainScreen/Header/Header';
 import { useState } from 'react';
 import RegistrationPopup from './components/RegistrationPopup/RegistrationPopup';
 import EditProfile from './components/Path/Profile/EditProfile/EditProfile';
+import TranslateVerbs from './components/Path/TranslateVerbs/TranslateVerbs';
+import TranslateWorld from './components/Path/TranslateWorld/TranslateWorld';
 
 
 
@@ -133,14 +135,49 @@ export default function App() {
       emptyWord: 'Where ',
       prepositionalWords: ['What', 'When', 'What kind of']
     },
+  ]
 
-    // {
-    //   phraseEnBroken: '',
-    //   phraseEn: '',
-    //   phraseRus: '',
-    //   emptyWord: '',
-    //   prepositionalWords: []
-    // },
+  // Глаголы №1
+  const verbsArray = [
+    {en: 'To be', rus: 'Быть'}, {en: 'To do', rus: 'Делать'},
+    {en: 'To see', rus: 'Видеть'}, {en: 'To feel', rus: 'Чувствовать'},
+    {en: 'To hear', rus: 'Слышать'}, {en: 'To run', rus: 'Бежать'},
+    {en: 'To make', rus: 'Сделать'}, {en: 'To get', rus: 'Получать'},
+    {en: 'To cook', rus: 'Готовить'}, {en: 'To sing', rus: 'Петь'},
+    {en: 'To say', rus: 'Говорить'}, {en: 'To speak', rus: 'Разговаривать'},
+    {en: 'To take', rus: 'Брать'}, {en: 'To tell', rus: 'Рассказывать'},
+    {en: 'To sit', rus: 'Садиться'}, {en: 'To stand', rus: 'Стоять'},
+    {en: 'To smile', rus: 'Улыбаться'}, {en: 'To laugh', rus: 'Смеяться'},
+    {en: 'To close', rus: 'Закрывать'}, {en: 'To open', rus: 'Открывать'},
+    {en: 'To love', rus: 'Любить'}, {en: 'To like', rus: 'Нравиться'},
+    {en: 'To bring', rus: 'Приносить'}, {en: 'To give', rus: 'Давать'},
+  ]
+
+  const sideVerbsArray = [
+    'Дышать','Покупать','Продавать','Забывать','Верить','Иметь','Идти',
+    'Знать','Думать','Приходить','Хотеть','Использовать',
+    'Находить','Работать','Есть','Пить','Писать','Читать','Звонить','Пытаться','Нуждаться',
+    'Становиться','Класть','Оставлять','Платить','Играть','Молиться',
+  ]
+
+  // Окружающий мир №1
+  const worldArray = [
+    {en: 'Air', rus: 'Воздух'}, {en: 'Tree ', rus: 'Дерево'},
+    {en: 'Wind', rus: 'Ветер'}, {en: 'Sea ', rus: 'Море'},
+    {en: 'Water', rus: 'Вода'}, {en: 'Ocean ', rus: 'Океан'},
+    {en: 'West', rus: 'Запад'}, {en: 'Rock ', rus: 'Скала'},
+    {en: 'East', rus: 'Восток'}, {en: 'Plant ', rus: 'Растение'},
+    {en: 'North', rus: 'Север'}, {en: 'Flower ', rus: 'Цветок'},
+    {en: 'South', rus: 'Юг'}, {en: 'Forest ', rus: 'Лес'},
+
+    {en: 'Day ', rus: 'День'}, {en: 'Person  ', rus: 'Личность'},
+    {en: 'Evening ', rus: 'Вечер'}, {en: 'Night  ', rus: 'Ночь'},
+    {en: 'Life ', rus: 'Жизнь'}, {en: 'Morning ', rus: 'Утро'},
+  ]
+
+  const sideWorldsArray = [
+    'Гора','Земля','Дом','Огонь','Страна','Животное','Птица','Рыба','Насекомое','Город','Мир','Играть',
+    'Держать','Любовь','Дядя','Работа','История','Заказ','Слово','Неделя','Дистанция','Театр','Поведение','Вечеринка',
   ]
 
   const [isHeaderVisible, setHeaderVisible] = useState(true);
@@ -173,6 +210,10 @@ export default function App() {
           <Route path="/" element={<MainScreen/>} />
           <Route path="/" element={<MainScreen/>} />
           <Route path="/Eat" element={<Eat words={eatWords} stateHeader={stateHeaderVisible} sideWords={eatSideWords} tab='Eat'/>} />
+          <Route path="/TranslateVerbs" element={<TranslateVerbs stateHeader={stateHeaderVisible} words={verbsArray} sideWords={sideVerbsArray} tab='Verbs'/>} />
+          
+          <Route path="/TranslateWorld" element={<TranslateWorld stateHeader={stateHeaderVisible} words={worldArray} sideWords={sideWorldsArray} tab='World'/>} />
+          
           <Route path="/TranslateWord" element={<TranslateColor stateHeader={stateHeaderVisible} words={words} sideWords={sideWords} tab='Word'/>} />
           <Route path="/TranslateColor" element={<TranslateWord stateHeader={stateHeaderVisible} words={colors} sideWords={sideColor} tab='Color'/>} />
           <Route path="/TranslateTheSentences" element={<TranslateTheSentences stateHeader={stateHeaderVisible} sentencesArray={sentencesArray} tab='Translate The Sentences'/>} />
@@ -183,3 +224,10 @@ export default function App() {
     </>
   )
 }
+
+// ПОЧИСТИТЬ SCSS КОД, УБРАТЬ КОНСОЛЬЛОГИ И ЛИШНИЕ КОММЕНТАРИИ
+// дОБАВИТЬ ИКОНКИ В *ПРОФИЛЬ-СТАТИСТИКА*
+// СДЕЛАТЬ ЛОГИКУ ДЛЯ ДОСТИЖЕНИЯ *ЭРУДИТ* - ЧТОБЫ ЭТО ЗАДАНИЕ ВЫПОЛНИТЬ НУЖНО ПРОЙТИ 17/17 ПЕРЕВОД СЛОВ, ЦВЕТА, ФРАЗЫ
+// ДОБАВИТЬ FAFICON 
+
+// СДЕЛАТЬ 2 РАЗДЕЛА И ДОБАВИТЬ БОЛЬШЕ ЗАДАНИЙ С ИНДИВИДУАЛЬНЫМИ СЛОВАМИ( МАССИВАМИ СЛОВ, ФРАЗ...)

@@ -19,10 +19,10 @@ export default function RegistrationPopup() {
   localStorage.setItem('userProfileData', JSON.stringify(UserProfileData));
 
   const handleContinueClick = () => {
-      // Получаем строку из локального хранилища
-      const storedUserProfileDataString = localStorage.getItem('userProfileData');
-      // Преобразовываем строку обратно в объект
-      const storedUserProfileData = JSON.parse(storedUserProfileDataString);
+    // Получаем строку из локального хранилища
+    const storedUserProfileDataString = localStorage.getItem('userProfileData');
+    // Преобразовываем строку обратно в объект
+    const storedUserProfileData = JSON.parse(storedUserProfileDataString);
 
     // Сохранение в локальное хранилище
     localStorage.setItem('savedUsername', username);
@@ -36,6 +36,10 @@ export default function RegistrationPopup() {
     } else {
       storedUserProfileData.userPhotoSrc = girlIcon;
     }
+
+    const today = new Date()
+    const registrationDate = today.toLocaleString("ru-RU", {month: "long"}) + ' ' + today.getFullYear()
+    storedUserProfileData.userRegistrationDate = registrationDate
 
     const userProfileDataString = JSON.stringify(storedUserProfileData);
     // Сохраняем строку в локальном хранилище
