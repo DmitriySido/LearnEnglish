@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/learnEnglish/static/css/main.f68b7e9d.css",
-    "main.js": "/learnEnglish/static/js/main.2c45f9a6.js",
+    "main.css": "/learnEnglish/static/css/main.49577ca8.css",
+    "main.js": "/learnEnglish/static/js/main.21c09358.js",
     "static/media/girl-icon-3.png": "/learnEnglish/static/media/girl-icon-3.6c7b0d5a64c1ca0deecd.png",
     "static/media/girl-icon-1.png": "/learnEnglish/static/media/girl-icon-1.c1e4e7fd806a40a41b9a.png",
     "static/media/girl-icon-2.png": "/learnEnglish/static/media/girl-icon-2.38e136b8328be6c21626.png",
@@ -11,11 +11,11 @@
     "static/media/man-icon-3.png": "/learnEnglish/static/media/man-icon-3.2fad21589294b3e76a38.png",
     "static/media/man-icon.png": "/learnEnglish/static/media/man-icon.859d6f0ef06e0c37a0b9.png",
     "index.html": "/learnEnglish/index.html",
-    "main.f68b7e9d.css.map": "/learnEnglish/static/css/main.f68b7e9d.css.map",
-    "main.2c45f9a6.js.map": "/learnEnglish/static/js/main.2c45f9a6.js.map"
+    "main.49577ca8.css.map": "/learnEnglish/static/css/main.49577ca8.css.map",
+    "main.21c09358.js.map": "/learnEnglish/static/js/main.21c09358.js.map"
   },
   "entrypoints": [
-    "static/css/main.f68b7e9d.css",
-    "static/js/main.2c45f9a6.js"
+    "static/css/main.49577ca8.css",
+    "static/js/main.21c09358.js"
   ]
 }
