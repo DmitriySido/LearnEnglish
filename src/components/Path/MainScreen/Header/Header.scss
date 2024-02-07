@@ -7,16 +7,103 @@
   width: 15vw;
   z-index: 100;
 
-  .navigation-item{
-    margin-bottom: 10px;
+  .logo{
+    width: 96px;
+    height: 46px;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+
+  // .navigation-item{
+  //   margin-bottom: 10px;
+  //   width: 100%;
+  //   padding: 10px;
+  //   transition: all .1s ease-in;
+  //   border-radius: 4px;
+
+  //   &:hover .navigation-link{
+  //     opacity: 1;
+  //   }
+
+  //   &:hover img{
+  //     opacity: 1;
+  //   }
+
+  //   img{
+  //     transition:  all .1s ease-in-out;
+  //     opacity: 0.7;
+  //     width: 28px;
+  //     height: 28px;
+  //     margin-right: 5px;
+
+  //     @media screen and (max-width: 700px){
+  //       width: 24px;
+  //       height: 24px;
+  //     }
+
+  //     @media screen and (max-width: 600px){
+  //       width: 40px;
+  //       height: 40px;
+  //       margin: 0px 15px;
+  //     }
+
+  //     @media screen and (max-width: 600px){
+  //       width: 30px;
+  //       height: 30px;
+  //     }
+  //   }
+        
+  //   .navigation-link{
+  //     color: #fff;
+  //     font-size: 18px;
+  //     font-weight: 500;
+  //     opacity: 0.7;
+  //     transition: all .1s ease-in;
+  //     display: flex;
+  //     align-items: center;
+  //   }
+        
+  //   .navigation-link--active{
+  //     opacity: 1;
+  //   }
+
+  //   @media screen and (max-width: 740px){
+  //     .navigation-link{
+  //       font-size: 16px;
+  //     }
+  //   }
+  // }
+
+  .navigation-item {
     width: 100%;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    margin-bottom: 10px;
     padding: 10px;
     transition: all .1s ease-in;
     border-radius: 4px;
-
-    &:hover{
-      background: #2c3039;
-    }
+   
+   &::before {
+    content: '';
+    width: 0;
+    border-radius: 4px;
+    height: 3em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to right, #18553e25 0%, #01995a1a 100%);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+   }
+   
+   &:hover::before {
+    width: 100%
+   }
 
     &:hover .navigation-link{
       opacity: 1;
@@ -69,6 +156,18 @@
         font-size: 16px;
       }
     }
+
+    @media screen and (max-width: 600px){
+      width: 40px;
+      height: 40px;
+      margin: 0px 15px;
+    }
+
+    @media screen and (max-width: 600px){
+      &:hover::before {
+        width: 0%
+      }
+    }
   }
 
   @media screen and (max-width: 1000px){
@@ -94,6 +193,10 @@
     width: 100vw;
     z-index: 1001;
     border: none;
+
+    .navigation-logo{
+      display: none;
+    }
 
     .navigation-list{
       position: absolute;

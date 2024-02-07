@@ -52,13 +52,13 @@ export default function TranslateWord({ words, sideWords, tab, stateHeader}) {
 
       setCount(count + 1)
       body.style.background = '#099121'
-      setTimeout(function() {body.style.background = 'rgb(19 31 36)'}, 800)
+      setTimeout(function() {body.style.background = '#131F24'}, 800)
     }else{
       if(count > 0){
         setCount(count - 1)
       }
       body.style.background = '#310404'
-      setTimeout(function() {body.style.background = 'rgb(19 31 36)'}, 800)
+      setTimeout(function() {body.style.background = '#131F24'}, 800)
     }
 
     funcRandomWord()

@@ -1,7 +1,6 @@
 import MainScreen from './components/Path/MainScreen/MainScreen';
 import TranslateColor from './components/Path/TranslateColor/TranslateColor';
 import TranslateWord from './components/Path/TranslateWord/TranslateWord'
-import './components/main.scss'
 import { Routes, Route, HashRouter } from "react-router-dom";
 import TranslateTheSentences from './components/Path/TranslateTheSentences/TranslateTheSentences';
 import Eat from './components/Path/Eat/Eat';
@@ -15,6 +14,7 @@ import EditProfile from './components/Path/Profile/EditProfile/EditProfile';
 import TranslateVerbs from './components/Path/TranslateVerbs/TranslateVerbs';
 import TranslateWorld from './components/Path/TranslateWorld/TranslateWorld';
 
+import './components/main.scss'
 
 
 export default function App() {
@@ -192,8 +192,8 @@ export default function App() {
 
   return(
     <>
-    <h2 className='h2-Error'>На вашем устройстве недоспутно!</h2>
-    <div className="App container">
+      <h2 className='h2-Error'>На вашем устройстве недоспутно!</h2>
+      <div className="App container">
 
       {
         savedUsername ? '' : <RegistrationPopup/>

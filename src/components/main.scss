@@ -41,11 +41,12 @@ button::-moz-focus-inner{
 }
 
 body{
-  background-color: rgb(19 31 36);
+  background: #131F24;
   color: #fff;
   font-family: 'Montserrat', sans-serif;
   overflow: hidden;
   overflow-x: hidden;
+  user-select: none; 
 }
 
   /*Slider*/
