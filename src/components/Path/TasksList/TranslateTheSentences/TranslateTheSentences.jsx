@@ -79,7 +79,7 @@ export default function TranslateTheSentences({ sentencesArray, stateHeader }){
         setTimeout(isCheck, 500)
 
       }
-      if(updatedShuffledArray.length == 0 & newRandomSentences.rus !== newSelectedWords.join(' ')){
+      if(updatedShuffledArray.length === 0 & newRandomSentences.rus !== newSelectedWords.join(' ')){
         setFlag(true)
 
         setTimeout(function() {

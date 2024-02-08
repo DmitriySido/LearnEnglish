@@ -4,7 +4,7 @@ import TranslateWord from './components/Path/TasksList/TranslateWord/TranslateWo
 import { Routes, Route, HashRouter } from "react-router-dom";
 import TranslateTheSentences from './components/Path/TasksList/TranslateTheSentences/TranslateTheSentences';
 import Eat from './components/Path/TasksList/Eat/Eat';
-import MissingWord from './components/Path/MissingWord/MissingWord';
+import MissingWord from './components/Path/TasksList/MissingWord/MissingWord';
 import Profile from './components/Path/Profile/Profile';
 import Settings from './components/Path/Settings/Settings';
 import Header from './components/Path/MainScreen/Header/Header';

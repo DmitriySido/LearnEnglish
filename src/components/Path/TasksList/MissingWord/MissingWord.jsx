@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import ButtonNotPressed from "../../Button/ButtonNotPressed"
-import ButtonToBack from "../../Button/ButtonToBack/ButtonToBack"
+import ButtonNotPressed from "../../../Button/ButtonNotPressed"
+import ButtonToBack from "../../../Button/ButtonToBack/ButtonToBack"
 import { Link } from "react-router-dom";
-import { ProgressData } from "../../Data/ProgressData";
-import SaveExperience from "../../../utils/SaveExperience";
-import Loader from "../../../utils/Loader/Loader";
+import { ProgressData } from "../../../Data/ProgressData";
+import SaveExperience from "../../../../utils/SaveExperience";
+import Loader from "../../../../utils/Loader/Loader";
 
 export default function MissingWord({ missingWordPhrases, stateHeader }){
   //Откладываем изменения состояния хеадера до рендеринга app
