@@ -5,6 +5,10 @@ import './MainScreen.scss'
 import AlertMessageFunc from "../../AlertMessage/AlertMessage";
 import { useState } from "react";
 import RoadMapItem from "./RoadMapItem/RoadMapItem";
+import league from '../../../foto/icons/league/league-gold.png'
+import experience from '../../../foto/icons/icons8-diamond-48.png'
+import timerIcon from '../../../foto/icons/timer-icon.png'
+import MoreInfoBlock from "./MoreInfoBlock/MoreInfoBlock";
 
 export default function MainScreen(){
   // Сохранение прогресса для каждого уровня
@@ -102,17 +106,7 @@ export default function MainScreen(){
             />
       </ul>
 
-      <div className="more-info">
-        <div className="find-friends">
-          <h2>Искать друзей</h2>
-        </div>
-        <div className="find-friends">
-          <h2>Искать друзей</h2>
-        </div>
-        <div className="find-friends">
-          <h2>Искать друзей</h2>
-        </div>
-      </div>
+      <MoreInfoBlock/>
     </div>
   )
 }

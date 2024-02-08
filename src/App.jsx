@@ -1,9 +1,9 @@
 import MainScreen from './components/Path/MainScreen/MainScreen';
-import TranslateColor from './components/Path/TranslateColor/TranslateColor';
-import TranslateWord from './components/Path/TranslateWord/TranslateWord'
+import TranslateColor from './components/Path/TasksList/TranslateColor/TranslateColor';
+import TranslateWord from './components/Path/TasksList/TranslateWord/TranslateWord'
 import { Routes, Route, HashRouter } from "react-router-dom";
-import TranslateTheSentences from './components/Path/TranslateTheSentences/TranslateTheSentences';
-import Eat from './components/Path/Eat/Eat';
+import TranslateTheSentences from './components/Path/TasksList/TranslateTheSentences/TranslateTheSentences';
+import Eat from './components/Path/TasksList/Eat/Eat';
 import MissingWord from './components/Path/MissingWord/MissingWord';
 import Profile from './components/Path/Profile/Profile';
 import Settings from './components/Path/Settings/Settings';
@@ -11,10 +11,11 @@ import Header from './components/Path/MainScreen/Header/Header';
 import { useState } from 'react';
 import RegistrationPopup from './components/RegistrationPopup/RegistrationPopup';
 import EditProfile from './components/Path/Profile/EditProfile/EditProfile';
-import TranslateVerbs from './components/Path/TranslateVerbs/TranslateVerbs';
-import TranslateWorld from './components/Path/TranslateWorld/TranslateWorld';
+import TranslateVerbs from './components/Path/TasksList/TranslateVerbs/TranslateVerbs';
+import TranslateWorld from './components/Path/TasksList/TranslateWorld/TranslateWorld';
 
 import './components/main.scss'
+import Tasks from './components/Path/Tasks/Tasks';
 
 
 export default function App() {
@@ -203,7 +204,8 @@ export default function App() {
         {isHeaderVisible && <Header />}
         <Routes>
           <Route path="/Profile" element={<Profile/>} />
-          <Route path="/Settings" element={<Settings/>} />
+          <Route path="/Settings" element={<EditProfile/>} />
+          <Route path="/Tasks" element={<Tasks/>} />
 
           <Route path="/EditProfile" element={<EditProfile/>} />
 
@@ -224,6 +226,14 @@ export default function App() {
     </>
   )
 }
+
+// СДЕЛАТЬ НОРМАЛЬНЫЙ ПРОВЫЙ БЛОК НА ГЛАВНОМ ЭКРАНЕ *ИСКАТЬ ДРУЗЕЙ, ЗАДАНИЯ ДНЯ, ЗОЛОТАЯ ЛИГА*
+// СДЕЛАТЬ ВКЛАДКУ *ЗАДАНИЯ* КАК В DUOLINGO И ЗА ВЫПОЛНЕНИЕ ЛЮБОГО ЗАДАНИЯ ОТКРЫВАТЬ СУНДУК И С НЕГО МОЖЕТ ВЫПАСТЬ НОВАЯ АВАТАРКА ДЛЯ ПРОФИЛЯ ИЛИ ДОПОЛНИТЕЛЬНЫЕ ОЧКИ ОПЫТА
+// ПРИ НАЖАТИИ НА ВКЛАДКУ *НАСТРОЙКИ* - ПЕРЕБРАСЫВАТЬ ВО ВКЛАДКУ EDITPROFILE
+// ВОЗМОЖНО ДОБАВИТЬ СПРАВОЧНИК ПЕРЕД КАЖДЫМ НОВЫМ РАЗДЕЛОМ И ИСПОЛЬЗОВАТЬ API ГОЛОСА АНГЛИЙСКИГ СЛОВ КАК В DUOLINGO
+// ВОЗМОЖНО ДОБАВАИТЬ МОТИВАЦИОННЫЕ ЭМОДЗИ ПРИ ПРОХОЖДЕНИИ ЗАДАНИЯ
+// адаптация
+
 
 // ПОЧИСТИТЬ SCSS КОД, УБРАТЬ КОНСОЛЬЛОГИ И ЛИШНИЕ КОММЕНТАРИИ
 // дОБАВИТЬ ИКОНКИ В *ПРОФИЛЬ-СТАТИСТИКА*

@@ -31,9 +31,9 @@ export default function RegistrationPopup() {
     storedUserProfileData.userPassword = password;
     storedUserProfileData.userGender = gender;
 
-    if (storedUserProfileData.userGender === 'Boy') {
+    if(storedUserProfileData.userGender === 'Boy') {
       storedUserProfileData.userPhotoSrc = manIcon;
-    } else {
+    }else {
       storedUserProfileData.userPhotoSrc = girlIcon;
     }
 

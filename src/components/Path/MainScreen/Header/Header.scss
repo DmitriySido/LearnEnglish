@@ -221,4 +221,12 @@
       }
     }
   }
+
+  @media screen and (max-width: 400px){
+    .navigation-link{
+      img{
+        margin: 0px 3px;
+      }
+    }
+  }
 }

@@ -3,6 +3,8 @@ import './Header.scss'
 import HomeIcon from '../../../../foto/icons/navigationIcon/Home-icon.png'
 import UserIcon from '../../../../foto/icons/navigationIcon/user-icon.png'
 import SettingsIcon from '../../../../foto/icons/navigationIcon/settings-icon.png'
+import TasksIcon from "../../../../foto/icons/navigationIcon/tasks-icon.png";
+
 import Logo from '../../../../foto/icons/Fluentify-logo.png'
 
 export default function Header(){
@@ -22,6 +24,11 @@ export default function Header(){
           <li className="navigation-item">
             
             <Link to="/Profile" className="navigation-link"><img src={UserIcon} alt="User icon" />Профиль</Link>
+          </li>
+
+          <li className="navigation-item">
+            
+            <Link to="/Tasks" className="navigation-link"><img src={TasksIcon} alt="Settings icon" />Задания</Link>
           </li>
 
           <li className="navigation-item">

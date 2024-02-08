@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import RenderWords from "../../RenderWords/RenderWords";
-import ButtonToBack from "../../Button/ButtonToBack/ButtonToBack";
-import {ProgressData} from "../../Data/ProgressData";
-import SaveExperience from "../../../utils/SaveExperience";
-import Loader from "../../../utils/Loader/Loader";
+import RenderWords from "../../../RenderWords/RenderWords";
+import ButtonToBack from "../../../Button/ButtonToBack/ButtonToBack";
+import {ProgressData} from "../../../Data/ProgressData";
+import SaveExperience from "../../../../utils/SaveExperience";
+import Loader from "../../../../utils/Loader/Loader";
 
 export default function TranslateWord({ words, sideWords, tab, stateHeader}) {
   //Откладываем изменения состояния хеадера до рендеринга app

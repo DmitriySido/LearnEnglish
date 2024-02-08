@@ -10,7 +10,7 @@ export default function SaveExperience(count){
   const storedUserProfileData = JSON.parse(storedUserProfileDataString)
 
   storedUserProfileData.experience += count
-  console.log(storedUserProfileData.experience)
+  storedUserProfileData.initialExperience += count
 
   // Преобразовываем объект в строку
   const userProfileDataString = JSON.stringify(storedUserProfileData);
