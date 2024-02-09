@@ -19,6 +19,7 @@ export default function RewardScreen() {
     // Update the state to show the selected reward
     setCurrentReward(randomElement);
     storedUserProfileData.experience += +randomElement
+    storedUserProfileData.initialExperience = 0
     const userProfileDataString = JSON.stringify(storedUserProfileData);
     localStorage.setItem('userProfileData', userProfileDataString);
 
@@ -31,10 +32,10 @@ export default function RewardScreen() {
   const stub = () => {}
 
   return (
-    <div className={count >= 3 ? "reward__wrapper reward__wrapper-disabled" : 'reward__wrapper'}>
+    <div className={count >= 5 ? "reward__wrapper reward__wrapper-disabled" : 'reward__wrapper'}>
       <h1>Нажимайте на сундук</h1>
       <h3>{currentReward}</h3>
-      <img onClick={count < 3 ? handleBox : stub} src={Box} alt="Box icon" />
+      <img onClick={count < 5 ? handleBox : stub} src={Box} alt="Box icon" />
     </div>
   );
 }
