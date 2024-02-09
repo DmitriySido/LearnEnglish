@@ -18,7 +18,7 @@ export default function Header(){
           </li>
 
           <li className="navigation-item">
-            <Link to="/" className="navigation-link"><img src={HomeIcon} alt="Home icon" />Обучнение</Link>
+            <Link to="/" className="navigation-link"><img src={HomeIcon} alt="Home icon" />Обучение</Link>
           </li>
 
           <li className="navigation-item">
@@ -28,7 +28,7 @@ export default function Header(){
 
           <li className="navigation-item">
             
-            <Link to="/Tasks" className="navigation-link"><img src={TasksIcon} alt="Settings icon" />Задания</Link>
+            <Link to="/Tasks" className="navigation-link navigation-link__tasks"><img src={TasksIcon} alt="Settings icon" />Задания</Link>
           </li>
 
           <li className="navigation-item">

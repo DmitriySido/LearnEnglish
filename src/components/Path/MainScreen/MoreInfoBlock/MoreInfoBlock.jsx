@@ -4,6 +4,7 @@ import league from '../../../../foto/icons/league/league-gold.png'
 import experience from '../../../../foto/icons/icons8-diamond-48.png'
 import timerIcon from '../../../../foto/icons/timer-icon.png'
 import { useEffect } from 'react';
+import Reward from '../../../AlertMessage/Reward/Reward';
 
 export default function MoreInfoBlock(){
 
@@ -12,21 +13,20 @@ export default function MoreInfoBlock(){
   // Преобразовываем строку обратно в объект
   const storedUserProfileData = JSON.parse(storedUserProfileDataString);
 
-  function progressPercentageFunc(maximumAmount){
-    return (storedUserProfileData.initialExperience / maximumAmount) * 100;
-  }
+  const progressPercentageFunc = maximumAmount => (storedUserProfileData.initialExperience / maximumAmount) * 100
   
   useEffect(() => {
     // Установить таймер для выполнения через 1 минут
     const timer = setInterval(() => {
-      if(storedUserProfileData.initialExperience >= 30){
+      if(storedUserProfileData.initialExperience >= 75){
         storedUserProfileData.initialExperience = 0
+        storedUserProfileData.experience += 100
         const userProfileDataString = JSON.stringify(storedUserProfileData);
         localStorage.setItem('userProfileData', userProfileDataString);
       }
 
       clearInterval(timer);
-    }, 60000);
+    }, 10);
 
     return () => clearInterval(timer);
   }, [storedUserProfileData.initialExperience])
@@ -47,7 +47,7 @@ export default function MoreInfoBlock(){
                 </div>
               </div>
 
-              {storedUserProfileData.initialExperience >= 75 && <h3>Задание скоро обновиться!</h3>}
+              {storedUserProfileData.initialExperience >= 75 && <h3>Задание выполнено!</h3>}
             </li>
 
             <li className={storedUserProfileData.initialExperience >= 55 ? "tasks-days__item tasks-days__item-done" : "tasks-days__item"}>
@@ -59,7 +59,7 @@ export default function MoreInfoBlock(){
                 </div>
               </div>
 
-              {storedUserProfileData.initialExperience >= 55 && <h3>Задание скоро обновиться!</h3>}
+              {storedUserProfileData.initialExperience >= 55 && <h3>Задание выполнено!</h3>}
             </li>
 
             <li className="tasks-days__item">

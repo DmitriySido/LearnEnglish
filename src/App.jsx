@@ -16,6 +16,8 @@ import TranslateWorld from './components/Path/TasksList/TranslateWorld/Translate
 
 import './components/main.scss'
 import Tasks from './components/Path/Tasks/Tasks';
+import Reward from './components/AlertMessage/Reward/Reward';
+import RewardScreen from './components/RewardScreen/RewardScreen';
 
 
 export default function App() {
@@ -191,15 +193,14 @@ export default function App() {
   let storedObject = localStorage.getItem('userProfileData');
   storedObject = JSON.parse(storedObject);
 
+  const storedUserProfileDataString = localStorage.getItem('userProfileData');
+  const storedUserProfileData = JSON.parse(storedUserProfileDataString);
+
   return(
     <>
-      <h2 className='h2-Error'>На вашем устройстве недоспутно!</h2>
       <div className="App container">
-
-      {
-        savedUsername ? '' : <RegistrationPopup/>
-      }
-
+      {storedUserProfileData ? storedUserProfileData.initialExperience >= 75 && <RewardScreen/> : ''}
+      { savedUsername ? '' : <RegistrationPopup/> }
       <HashRouter basename='/'>
         {isHeaderVisible && <Header />}
         <Routes>
@@ -227,9 +228,7 @@ export default function App() {
   )
 }
 
-// СДЕЛАТЬ НОРМАЛЬНЫЙ ПРОВЫЙ БЛОК НА ГЛАВНОМ ЭКРАНЕ *ИСКАТЬ ДРУЗЕЙ, ЗАДАНИЯ ДНЯ, ЗОЛОТАЯ ЛИГА*
 // СДЕЛАТЬ ВКЛАДКУ *ЗАДАНИЯ* КАК В DUOLINGO И ЗА ВЫПОЛНЕНИЕ ЛЮБОГО ЗАДАНИЯ ОТКРЫВАТЬ СУНДУК И С НЕГО МОЖЕТ ВЫПАСТЬ НОВАЯ АВАТАРКА ДЛЯ ПРОФИЛЯ ИЛИ ДОПОЛНИТЕЛЬНЫЕ ОЧКИ ОПЫТА
-// ПРИ НАЖАТИИ НА ВКЛАДКУ *НАСТРОЙКИ* - ПЕРЕБРАСЫВАТЬ ВО ВКЛАДКУ EDITPROFILE
 // ВОЗМОЖНО ДОБАВИТЬ СПРАВОЧНИК ПЕРЕД КАЖДЫМ НОВЫМ РАЗДЕЛОМ И ИСПОЛЬЗОВАТЬ API ГОЛОСА АНГЛИЙСКИГ СЛОВ КАК В DUOLINGO
 // ВОЗМОЖНО ДОБАВАИТЬ МОТИВАЦИОННЫЕ ЭМОДЗИ ПРИ ПРОХОЖДЕНИИ ЗАДАНИЯ
 // адаптация
@@ -239,5 +238,3 @@ export default function App() {
 // дОБАВИТЬ ИКОНКИ В *ПРОФИЛЬ-СТАТИСТИКА*
 // СДЕЛАТЬ ЛОГИКУ ДЛЯ ДОСТИЖЕНИЯ *ЭРУДИТ* - ЧТОБЫ ЭТО ЗАДАНИЕ ВЫПОЛНИТЬ НУЖНО ПРОЙТИ 17/17 ПЕРЕВОД СЛОВ, ЦВЕТА, ФРАЗЫ
 // ДОБАВИТЬ FAFICON 
-
-// СДЕЛАТЬ 2 РАЗДЕЛА И ДОБАВИТЬ БОЛЬШЕ ЗАДАНИЙ С ИНДИВИДУАЛЬНЫМИ СЛОВАМИ( МАССИВАМИ СЛОВ, ФРАЗ...)

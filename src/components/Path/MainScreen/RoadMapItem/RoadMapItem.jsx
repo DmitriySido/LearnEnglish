@@ -9,7 +9,7 @@ export default function RoadMapItem({setFlag, storedProgress1, storedProgress2, 
   
     setTimeout(() => {
       setFlag(false);
-    }, 2200);
+    }, 4200);
   }
 
   const stub = () => {}

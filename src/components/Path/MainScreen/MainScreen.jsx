@@ -5,10 +5,8 @@ import './MainScreen.scss'
 import AlertMessageFunc from "../../AlertMessage/AlertMessage";
 import { useState } from "react";
 import RoadMapItem from "./RoadMapItem/RoadMapItem";
-import league from '../../../foto/icons/league/league-gold.png'
-import experience from '../../../foto/icons/icons8-diamond-48.png'
-import timerIcon from '../../../foto/icons/timer-icon.png'
 import MoreInfoBlock from "./MoreInfoBlock/MoreInfoBlock";
+import RewardScreen from "../../RewardScreen/RewardScreen";
 
 export default function MainScreen(){
   // Сохранение прогресса для каждого уровня

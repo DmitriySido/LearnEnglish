@@ -151,6 +151,26 @@
       opacity: 1;
     }
 
+    .navigation-link__tasks{
+      position: relative;
+    }
+
+    .navigation-link__tasks::before{
+      position: absolute;
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: #00d32e;
+      border-radius: 100px;
+      right: -5px;
+      z-index: 1;
+
+      @media screen and (max-width: 600px){
+        top: 0px;
+        right: 3px;
+      }
+    }
+
     @media screen and (max-width: 740px){
       .navigation-link{
         font-size: 16px;
