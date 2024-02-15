@@ -4,9 +4,24 @@ import ButtonToBack from '../../../Button/ButtonToBack/ButtonToBack';
 import { Link } from 'react-router-dom';
 import SaveExperience from '../../../../utils/SaveExperience';
 import { ProgressData } from '../../../Data/ProgressData';
+import Loader from '../../../../utils/Loader/Loader';
 
 const WordPairSelection = ({ stateHeader }) => {
+  const [loader, setLoader] = useState(false)
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setLoader(true);
+
+    const timeout = setTimeout(() => {
+      setLoader(false);
+    }, 4000);
+
+    // Очистка таймаута при размонтировании компонента
+    return () => clearTimeout(timeout);
+  }, []);
+
+
   const [wordPairArray, setWordPairArray] = useState([
     {
       block: [
@@ -138,6 +153,7 @@ const WordPairSelection = ({ stateHeader }) => {
 
   return (
     <>
+    {loader && <Loader/>}
     {wordPairArray.length > 0 ? 
     <div className='pair__wrapper'>
       <ButtonToBack toBackPopupAlert={toBackPopupAlert} alertState={alertState} />
