@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import ButtonNotPressed from "../../../Button/ButtonNotPressed"
 import ButtonToBack from "../../../Button/ButtonToBack/ButtonToBack"
 import { Link } from "react-router-dom";
@@ -15,7 +15,8 @@ export default function MissingWord({ missingWordPhrases, stateHeader }){
 
   const [alertState, setAlertState] = useState(false)
   const [stateButton, setStateButton] = useState(false)
-  const [count, setCount] = useState(0)
+
+  const countRef = useRef(0)
 
   const [loader, setLoader] = useState(false)
 
@@ -41,11 +42,11 @@ export default function MissingWord({ missingWordPhrases, stateHeader }){
   const getWord = (content) => {
     // Проверка на правильность нажатой кнопки
     if (content === randomElement.emptyWord) {
-      setCount(count + 1)
+      countRef.current++
       body.style.background = "#099121"
       setTimeout(function () {body.style.background = '#131F24'}, 800)
     } else {
-      count < 0 && setCount(count - 1)
+      countRef.current < 0 && countRef.current++
       body.style.background = "#310404"
       setTimeout(function () {body.style.background = '#131F24'}, 800)
     }
@@ -86,9 +87,9 @@ export default function MissingWord({ missingWordPhrases, stateHeader }){
 
       <button className={stateButton === true ? 'disabled-button' : 'active-button'} onClick={randomPhrases}>Начать</button>
 
-      {stateButton === true && <p className="count">Count: <span>{count}</span></p>}
+      {stateButton === true && <p className="count">Count: <span>{countRef.current}</span></p>}
 
-      <div className={count === 5 ? 'content-block content-block__disabled' : 'content-block'}>
+      <div className={countRef.current === 5 ? 'content-block content-block__disabled' : 'content-block'}>
         <h2 className="random-text">{randomElement.phraseRus}</h2>
         <h1 className="random-text">{randomElement.phraseEnBroken}</h1>
         <ul className="word__wrapper">
@@ -100,8 +101,8 @@ export default function MissingWord({ missingWordPhrases, stateHeader }){
         </ul>
       </div>
       
-      {count === 5 && <h2 className="plus-experience">+65 очков опыта!</h2>}
-      {count === 5 && <button onClick={addProgressWords}><Link to="/" className='button-to-back__center'>Закончить</Link></button>}
+      {countRef.current === 5 && <h2 className="plus-experience">+65 очков опыта!</h2>}
+      {countRef.current === 5 && <button onClick={addProgressWords}><Link to="/" className='button-to-back__center'>Закончить</Link></button>}
     </>
   )
 }

@@ -7,6 +7,7 @@ import { useState } from "react";
 import RoadMapItem from "./RoadMapItem/RoadMapItem";
 import MoreInfoBlock from "./MoreInfoBlock/MoreInfoBlock";
 import RewardScreen from "../../RewardScreen/RewardScreen";
+import WordPairSelection from "../TasksList/WordPairSelection/WordPairSelection";
 
 export default function MainScreen(){
   // Сохранение прогресса для каждого уровня
@@ -28,11 +29,16 @@ export default function MainScreen(){
   const missingWordInPhraseProgress = localStorage.getItem('missingWordInPhrase');
   ProgressData.missingWordInPhrase = missingWordInPhraseProgress ? parseInt(missingWordInPhraseProgress, 10) : 0;
 
+  const storedPairWord = localStorage.getItem('pairWord');
+  ProgressData.pairWord = storedPairWord ? parseInt(storedPairWord, 10) : 0;
+
 
   const [flag, setFlag] = useState(false)
 
   // Функция обратного вызова для передачи в дочерний компонент
   const updateFlag = newFlag => setFlag(newFlag)
+
+  console.log(ProgressData)
 
   return(
     <div className="main-screen__wrapper">
@@ -97,10 +103,19 @@ export default function MainScreen(){
             <RoadMapItem
               setFlag={updateFlag}
               storedProgress1={storedTranslatePhrasesProgress}
-              storedProgress2={storedTranslateWordsProgress}
+              storedProgress2={storedTranslatePhrasesProgress}
               pathTo={'/MissingWord'}
               percent={missingWordInPhraseProgress}
               tooltipText='Пропущенное слово'
+            />
+
+            <RoadMapItem
+              setFlag={updateFlag}
+              storedProgress1={missingWordInPhraseProgress}
+              storedProgress2={missingWordInPhraseProgress}
+              pathTo={'/WordPairSelection'}
+              percent={storedPairWord}
+              tooltipText='Выберите пары слов'
             />
       </ul>
 

@@ -12,13 +12,13 @@ export default function RoadMapItem({setFlag, storedProgress1, storedProgress2, 
     }, 4200);
   }
 
-  const stub = () => {}
+  const handleItem = () => {}
 
   return(
-    <li className={`road-map__item tooltip ${(storedProgress1 >= 2 ? '' : 'not-available')} ${percent >= 17 ? 'passed' : ''}`}>
+    <li className={`road-map__item tooltip active ${(storedProgress1 >= 2 ? '' : 'not-available')} ${percent >= 17 && 'passed'}`}>
       <span className="tooltiptext">{tooltipText}</span>
-      <button onClick={storedProgress1 >= 2 ? stub : clickOnAvaliableLink} className='road-map__item-button'>
-        <Link to={storedProgress2 >= 2 ? pathTo : ''} className="road-map__link">Missing Word</Link>
+      <button onClick={storedProgress1 >= 2 ? clickOnAvaliableLink : handleItem} className='road-map__item-button'>
+        <Link to={storedProgress2 >= 2 && pathTo} className="road-map__link">Missing Word</Link>
         <CircularProgressBar percent={percent > 0 ? percent : 0} />
       </button>
     </li> 

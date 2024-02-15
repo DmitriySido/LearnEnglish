@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import RenderWords from "../../../RenderWords/RenderWords";
 import ButtonToBack from "../../../Button/ButtonToBack/ButtonToBack";
@@ -19,7 +19,7 @@ export default function TranslateWord({ words, sideWords, tab, stateHeader}) {
 
   const body = document.querySelector('body')
   
-  const [count, setCount] = useState(0)
+  const countRef = useRef(0)
 
   const funcRandomWord = () => {
     setStateButton(true)
@@ -49,14 +49,12 @@ export default function TranslateWord({ words, sideWords, tab, stateHeader}) {
   const getWord = (content) => {
     // Проверка на праильность нажатой кнопки
     if(content === randomWord.rus){
+      countRef.current++
 
-      setCount(count + 1)
       body.style.background = '#099121'
       setTimeout(function() {body.style.background = '#131F24'}, 800)
     }else{
-      if(count > 0){
-        setCount(count - 1)
-      }
+      countRef.current > 0 && countRef.current--
       body.style.background = '#310404'
       setTimeout(function() {body.style.background = '#131F24'}, 800)
     }
@@ -135,13 +133,13 @@ export default function TranslateWord({ words, sideWords, tab, stateHeader}) {
 
       <button className={stateButton === true ? 'disabled-button' : 'active-button'} onClick={funcRandomWord}>Начать</button>
       
-      {stateButton === true && <p className="count">Count: <span>{count}</span></p>}
+      {stateButton === true && <p className="count">Count: <span>{countRef.current}</span></p>}
 
-      {randomWord !== '' && <RenderWords count={count} randomWord={randomWord} shuffledArray={shuffledArray} getWord={getWord}/>}
+      {randomWord !== '' && <RenderWords count={countRef.current} randomWord={randomWord} shuffledArray={shuffledArray} getWord={getWord}/>}
 
-      {(count === 5) && (tab === 'Word' ? <h2 className="plus-experience">+50 очков опыта!</h2> : <h2 className="plus-experience">+35 очков опыта!</h2>)}
+      {(countRef.current === 5) && (tab === 'Word' ? <h2 className="plus-experience">+50 очков опыта!</h2> : <h2 className="plus-experience">+35 очков опыта!</h2>)}
 
-      {count === 5 && <button onClick={addProgress}><Link to="/" className='button-to-back__center'>Закончить</Link></button>}
+      {countRef.current === 5 && <button onClick={addProgress}><Link to="/" className='button-to-back__center'>Закончить</Link></button>}
     </div>
   )
 }

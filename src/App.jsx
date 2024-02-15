@@ -18,6 +18,7 @@ import './components/main.scss'
 import Tasks from './components/Path/Tasks/Tasks';
 import Reward from './components/AlertMessage/Reward/Reward';
 import RewardScreen from './components/RewardScreen/RewardScreen';
+import WordPairSelection from './components/Path/TasksList/WordPairSelection/WordPairSelection';
 
 
 export default function App() {
@@ -199,7 +200,7 @@ export default function App() {
   return(
     <>
       <div className="App container">
-      {storedUserProfileData ? storedUserProfileData.initialExperience >= 75 && <RewardScreen/> : ''}
+      {storedUserProfileData ? storedUserProfileData.initialExperience >= 175 && <RewardScreen/> : ''}
       { savedUsername ? '' : <RegistrationPopup/> }
       <HashRouter basename='/'>
         {isHeaderVisible && <Header />}
@@ -212,9 +213,12 @@ export default function App() {
 
           <Route path="/" element={<MainScreen/>} />
           <Route path="/" element={<MainScreen/>} />
+
           <Route path="/Eat" element={<Eat words={eatWords} stateHeader={stateHeaderVisible} sideWords={eatSideWords} tab='Eat'/>} />
           <Route path="/TranslateVerbs" element={<TranslateVerbs stateHeader={stateHeaderVisible} words={verbsArray} sideWords={sideVerbsArray} tab='Verbs'/>} />
-          
+
+          <Route path="/WordPairSelection" element={<WordPairSelection stateHeader={stateHeaderVisible} tab='Par Word'/>} />
+
           <Route path="/TranslateWorld" element={<TranslateWorld stateHeader={stateHeaderVisible} words={worldArray} sideWords={sideWorldsArray} tab='World'/>} />
           
           <Route path="/TranslateWord" element={<TranslateColor stateHeader={stateHeaderVisible} words={words} sideWords={sideWords} tab='Word'/>} />
@@ -228,7 +232,7 @@ export default function App() {
   )
 }
 
-// СДЕЛАТЬ ВКЛАДКУ *ЗАДАНИЯ* КАК В DUOLINGO И ЗА ВЫПОЛНЕНИЕ ЛЮБОГО ЗАДАНИЯ ОТКРЫВАТЬ СУНДУК И С НЕГО МОЖЕТ ВЫПАСТЬ НОВАЯ АВАТАРКА ДЛЯ ПРОФИЛЯ ИЛИ ДОПОЛНИТЕЛЬНЫЕ ОЧКИ ОПЫТА
+// Добавить отображение при нажатии на задание в главном меню сколько начислиться очков опыта за прохождение
 // ВОЗМОЖНО ДОБАВИТЬ СПРАВОЧНИК ПЕРЕД КАЖДЫМ НОВЫМ РАЗДЕЛОМ И ИСПОЛЬЗОВАТЬ API ГОЛОСА АНГЛИЙСКИГ СЛОВ КАК В DUOLINGO
 // ВОЗМОЖНО ДОБАВАИТЬ МОТИВАЦИОННЫЕ ЭМОДЗИ ПРИ ПРОХОЖДЕНИИ ЗАДАНИЯ
 // адаптация
@@ -237,4 +241,4 @@ export default function App() {
 // ПОЧИСТИТЬ SCSS КОД, УБРАТЬ КОНСОЛЬЛОГИ И ЛИШНИЕ КОММЕНТАРИИ
 // дОБАВИТЬ ИКОНКИ В *ПРОФИЛЬ-СТАТИСТИКА*
 // СДЕЛАТЬ ЛОГИКУ ДЛЯ ДОСТИЖЕНИЯ *ЭРУДИТ* - ЧТОБЫ ЭТО ЗАДАНИЕ ВЫПОЛНИТЬ НУЖНО ПРОЙТИ 17/17 ПЕРЕВОД СЛОВ, ЦВЕТА, ФРАЗЫ
-// ДОБАВИТЬ FAFICON 
+// ДОБАВИТЬ FAVICON 

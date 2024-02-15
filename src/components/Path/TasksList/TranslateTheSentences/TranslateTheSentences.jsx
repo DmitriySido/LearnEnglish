@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import ButtonToBack from "../../../Button/ButtonToBack/ButtonToBack";
 import ButtonNotPressed from "../../../Button/ButtonNotPressed";
 import {ProgressData, StatsData} from "../../../Data/ProgressData";
@@ -24,8 +24,7 @@ export default function TranslateTheSentences({ sentencesArray, stateHeader }){
   const [newRandomSentences, setNewRandomSentences] = useState('')
   const [shuffledArray, setShuffledArray] = useState([]) // Состояние перемешанного массива
   
-
-  const [count, setCount] = useState(0)
+  const countRef = useRef(0)
   const [flag, setFlag] = useState(false)
 
   // Выбранное слово
@@ -56,7 +55,7 @@ export default function TranslateTheSentences({ sentencesArray, stateHeader }){
 
     body.style.background = '#006123'
     setTimeout(function() {body.style.background = '#131F24'}, 800)
-    setCount(count + 1)
+    countRef.current++
     setShuffledArray([])
     setSelectedWords([])
     setNewRandomSentences('')
@@ -85,7 +84,7 @@ export default function TranslateTheSentences({ sentencesArray, stateHeader }){
         setTimeout(function() {
           setFlag(false)
           body.style.background = '#270505'
-          count > 0 && setCount(count - 1)
+          countRef.current > 0 && countRef.current--
         }, 800)
         setTimeout(function() {body.style.background = '#131F24'}, 1600)
       }
@@ -138,10 +137,10 @@ export default function TranslateTheSentences({ sentencesArray, stateHeader }){
 
       <button className={stateButton === true ? 'disabled-button' : 'active-button'} onClick={createRandomSentences}>Начать</button>
       {stateButton === true &&
-      <div className={count === 2 ? 'content-block content-block__phrases content-block__disabled' : 'content-block content-block__phrases'}>
+      <div className={countRef.current === 2 ? 'content-block content-block__phrases content-block__disabled' : 'content-block content-block__phrases'}>
         <h2 className="random-text random-text__phrases">{newRandomSentences.en}</h2>
         {flag && <p className="check">Проверка...</p>}
-        <p className="count">Count: {count}</p>
+        <p className="count">Count: {countRef.current}</p>
         <ul className="phrases__wrapepr">
           {selectedWords.map((word, index) => (
             <li key={index}>
@@ -161,8 +160,8 @@ export default function TranslateTheSentences({ sentencesArray, stateHeader }){
         </ul>
       </div>
       }
-      {count === 2 && <h2 className="plus-experience">+85 очков опыта!</h2>}
-      {count === 2 && <button onClick={addProgress}><Link to="/" className='button-to-back__center'>Закончить</Link></button>}
+      {countRef.current === 2 && <h2 className="plus-experience">+85 очков опыта!</h2>}
+      {countRef.current === 2 && <button onClick={addProgress}><Link to="/" className='button-to-back__center'>Закончить</Link></button>}
     </div>
   )
 }
