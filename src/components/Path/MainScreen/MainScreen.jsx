@@ -38,8 +38,6 @@ export default function MainScreen(){
   // Функция обратного вызова для передачи в дочерний компонент
   const updateFlag = newFlag => setFlag(newFlag)
 
-  console.log(ProgressData)
-
   return(
     <div className="main-screen__wrapper">
       {flag && <AlertMessageFunc />}

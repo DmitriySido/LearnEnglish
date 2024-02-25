@@ -6,7 +6,6 @@ import TranslateTheSentences from './components/Path/TasksList/TranslateTheSente
 import Eat from './components/Path/TasksList/Eat/Eat';
 import MissingWord from './components/Path/TasksList/MissingWord/MissingWord';
 import Profile from './components/Path/Profile/Profile';
-import Settings from './components/Path/Settings/Settings';
 import Header from './components/Path/MainScreen/Header/Header';
 import { useState } from 'react';
 import RegistrationPopup from './components/RegistrationPopup/RegistrationPopup';
@@ -16,7 +15,6 @@ import TranslateWorld from './components/Path/TasksList/TranslateWorld/Translate
 
 import './components/main.scss'
 import Tasks from './components/Path/Tasks/Tasks';
-import Reward from './components/AlertMessage/Reward/Reward';
 import RewardScreen from './components/RewardScreen/RewardScreen';
 import WordPairSelection from './components/Path/TasksList/WordPairSelection/WordPairSelection';
 
@@ -52,13 +50,26 @@ export default function App() {
 
   // Цвета
   const colors= [
-    {en: 'Yellow', rus: 'Жёлтый'}, {en: 'Red', rus: 'Красный'},
-    {en: 'Green', rus: 'Зелёный'}, {en: 'Orange', rus: 'Оранжевый'},
-    {en: 'Blue', rus: 'Синий'}, {en: 'Purple', rus: 'Фиолетовый'},
+    {en: 'Hobby', rus: 'Хобби'}, {en: 'Collect', rus: 'Коллекционировать'},
+    {en: 'Passion', rus: 'Увлечение'}, {en: 'Hunter', rus: 'Охотник'},
+    {en: 'Camera', rus: 'Фотоаппарат'}, {en: 'Frame', rus: 'Рамка'},
+
+    {en: 'Photography', rus: 'Фотография'}, {en: 'Hotel', rus: 'Гостиница'},
+    {en: 'Snapshot', rus: 'Снимок'}, {en: 'Neighbour', rus: 'Сосед'},
+    {en: 'Sew', rus: 'Шить'}, {en: 'Stairs', rus: 'Лестница'},
+
+    {en: 'Key', rus: 'Ключ'}, {en: 'Hall', rus: 'Холл'},
+    {en: 'Bathroom', rus: 'Ванная'}, {en: 'Kitchen', rus: 'Кухня'},
+    {en: 'Glass', rus: 'Стекло'}, {en: 'Wash', rus: 'Стирать'},
   ]
 
   // Побочные Цвета
-  const sideColor = ['Жёлтый','Красный','Зелёный','Оранжевый','Фиолетовый','Синий','Бардовый',]
+  const sideColor = [
+    'отопление','штекер','розетка','вентилятор','печь','дрова','уголь', 
+    'жена','щетка','шторы','кровать','унитаз','счетчик','лампочка',
+    'дедушка','мусор','часы','диван','душ','покрытие','морозильник',
+    'веник','метла','тумбочка','комод','печь','обои','обогревать',
+    ]
 
   // Еда
   const eatWords = [

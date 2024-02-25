@@ -31,7 +31,7 @@ export default function TranslateWord({ words, sideWords, tab, stateHeader}) {
     // Инициализируем 3 побочных слова
     for (let count = 1; count < 4; count++) {
       let sideWord = sideWords[Math.floor((Math.random() * sideWords.length))]
-      newWordsRUS.push(sideWord)
+      newWordsRUS.push(sideWord[0].toUpperCase() + sideWord.slice(1))
     }
 
     // Устанавливаем новые случайные слова и обнуляем массив
