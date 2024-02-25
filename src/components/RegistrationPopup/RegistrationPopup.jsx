@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './RegistrationPopup.scss';
 import { UserProfileData } from '../Data/ProgressData';
 
@@ -14,7 +14,6 @@ export default function RegistrationPopup() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [gender, setGender] = useState('Boy');
-  const [flag, setFlag] = useState(false)
 
   localStorage.setItem('userProfileData', JSON.stringify(UserProfileData));
 

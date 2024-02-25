@@ -1,8 +1,38 @@
+@keyframes bgColor {
+  0%{
+    background: #131F24;
+  }
+  15%{
+    background: #1e333b;
+  }
+  30%{
+    background: #264552;
+  }
+  45%{
+    background: #284f5f;
+  }
+  60%{
+    background: #2a5c70;
+  }
+  75%{
+    background: #1c4655;
+  }
+  90%{
+    background: #163a46;
+  }
+  100%{
+    background: #1f343d;
+  }
+}
+
 .registration-popup__wrapper{
+  animation-name: bgColor;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
   position: absolute;
   width: 100vw;
   height: 100vh;
-  background: #03030e;
+  background: #131F24;
   left: 0px;
   top: 0px;
   z-index: 100000;
@@ -13,7 +43,6 @@
   top:50%;
   left:50%;
   transform:translate(-50%, -50%);
-
   
   .form {
     display: flex;
@@ -22,14 +51,15 @@
     padding-left: 2em;
     padding-right: 2em;
     padding-bottom: 0.4em;
-    background-color: #171717;
+    background-color: rgba(34, 31, 31, 0.5);
     border-radius: 25px;
+    border: 1px solid transparent;
+    box-shadow: 5px 5px 5px #131F24;
     transition: .4s ease-in-out;
   }
 
   .form:hover {
-    transform: scale(1.05);
-    border: 1px solid black;
+    border: 1px solid #01b3d3;
   }
 
   #heading {
@@ -97,10 +127,10 @@
   }
 
   .button1 {
-    padding: 0.5em;
-    padding-left: 1.1em;
-    padding-right: 1.1em;
-    border-radius: 5px;
+    text-align: center;
+    padding: 12px 10px;
+    margin-top: 15px;
+    border-radius: 100px;
     margin-right: 0.5em;
     border: none;
     outline: none;
